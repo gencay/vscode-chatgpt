@@ -1,0 +1,148 @@
+{
+  "name": "vscode-chatgpt",
+  "displayName": "ChatGPT",
+  "description": "A visual studio code extension to support ChatGPT in IDE. The extension is pair-programmed with ChatGPT",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:vscode-chatgpt.view",
+    "onCommand:vscode-chatgpt.clearSession",
+    "onCommand:vscode-chatgpt.freeText",
+    "onCommand:vscode-chatgpt.addTests",
+    "onCommand:vscode-chatgpt.findProblems",
+    "onCommand:vscode-chatgpt.optimize",
+    "onCommand:vscode-chatgpt.explain"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "menus": {
+      "editor/context": [
+        {
+          "command": "vscode-chatgpt.addTests",
+          "group": "chatGpt@1",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "vscode-chatgpt.findProblems",
+          "group": "chatGpt@2",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "vscode-chatgpt.optimize",
+          "group": "chatGpt@3",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "vscode-chatgpt.explain",
+          "group": "chatGpt@4",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vscode-chatgpt.freeText",
+        "title": "ChatGPT: Ask anything"
+      },
+      {
+        "command": "vscode-chatgpt.clearSession",
+        "title": "ChatGPT: Clear session"
+      },
+      {
+        "command": "vscode-chatgpt.addTests",
+        "title": "ChatGPT: Add tests",
+        "enablement": "editorHasSelection"
+      },
+      {
+        "command": "vscode-chatgpt.findProblems",
+        "title": "ChatGPT: Find problems",
+        "enablement": "editorHasSelection"
+      },
+      {
+        "command": "vscode-chatgpt.optimize",
+        "title": "ChatGPT: Optimize",
+        "enablement": "editorHasSelection"
+      },
+      {
+        "command": "vscode-chatgpt.explain",
+        "title": "ChatGPT: Explain",
+        "enablement": "editorHasSelection"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vscode-chatgpt-view-container",
+          "title": "ChatGPT",
+          "icon": "images/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "vscode-chatgpt-view-container": [
+        {
+          "type": "webview",
+          "id": "vscode-chatgpt.view",
+          "name": "Conversation window"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ChatGPT",
+      "properties": {
+        "chatgpt.promptPrefix.addTests": {
+          "type": "string",
+          "default": "Implement tests for the following code",
+          "description": "The prompt prefix used for adding tests for the selected code"
+        },
+        "chatgpt.promptPrefix.findProblems": {
+          "type": "string",
+          "default": "Find problems with the following code",
+          "description": "The prompt prefix used for finding problems for the selected code"
+        },
+        "chatgpt.promptPrefix.optimize": {
+          "type": "string",
+          "default": "Optimize the following code",
+          "description": "The prompt prefix used for optimizing the selected code"
+        },
+        "chatgpt.promptPrefix.explain": {
+          "type": "string",
+          "default": "Explain the following code",
+          "description": "The prompt prefix used for explaining the selected code"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "esbuild-base": "rimraf out && esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "build": "npm run -S esbuild-base -- --sourcemap",
+    "watch": "npm run -S esbuild-base -- --sourcemap --watch",
+    "fmt": "prettier --write \"src/**/*.ts\"&& npm run test -- --fix",
+    "test": "eslint src --ext ts && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.73.0",
+    "@types/vscode-webview": "^1.57.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "esbuild": "^0.15.18",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "chatgpt": "^1.4.0"
+  }
+}
