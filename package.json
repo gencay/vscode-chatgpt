@@ -1,13 +1,22 @@
 {
   "name": "vscode-chatgpt",
-  "displayName": "ChatGPT",
+  "publisher": "gencay",
+  "displayName": "ChatGPT - Add tests, find bugs and improve your code",
+  "icon": "images/iconWhite.png",
   "description": "A visual studio code extension to support ChatGPT in IDE. The extension is pair-programmed with ChatGPT",
-  "version": "0.0.1",
+  "version": "0.1.1",
+  "repository": {
+    "url": "https://github.com/gencay/vscode-chatgpt"
+  },
   "engines": {
     "vscode": "^1.73.0"
   },
   "categories": [
-    "Other"
+    "Testing",
+    "Data Science",
+    "Formatters",
+    "Programming Languages",
+    "Linters"
   ],
   "activationEvents": [
     "onView:vscode-chatgpt.view",
