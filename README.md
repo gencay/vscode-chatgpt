@@ -1,13 +1,13 @@
-<h2 align="center"><img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/icon.png" height="64"><br>Ask ChatGPT</h2>
+<h2 align="center"><img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/iconWhite.png" height="64"><br>Ask ChatGPT</h2>
 <p align="center"><strong>ChatGPT conversations in Visual Studio Code</strong></p>
-
----
 
 ![Features](./images/features.png)
 
 # Setup
 
 Login following the instructions here to get your access token: https://github.com/transitive-bullshit/chatgpt-api#how-it-works
+
+During your first interaction with the extension, you will be asked to enter your access token.
 
 # Features
 
