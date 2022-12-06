@@ -1,9 +1,10 @@
 <h2 align="center"><img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/iconWhite.png" height="64"><br>Ask ChatGPT</h2>
 <p align="center"><strong>ChatGPT conversations in Visual Studio Code</strong></p>
 
+[![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadge.apphb.com/version/gencay.vscode-chatgpt.svg)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+
 # Level up your coding experience
 
-- ➕ Install the extension here: https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt
 - 💯 Get help from ChatGPT within vs-code by asking it questions about your code such as help implementing test cases, explaining it etc.
 - 🧪 This extension uses unofficial OpenAI APIs.
 - 🔥 This vs-code extension was implemented with the help of ChatGPT.
@@ -13,9 +14,11 @@
 
 # Setup
 
-Login following the instructions here to get your access token: https://github.com/transitive-bullshit/chatgpt-api#how-it-works
+Follow the instructions here to get your access token: https://github.com/transitive-bullshit/chatgpt-api#how-it-works
 
 During your first interaction with the extension, you will be asked to enter your access token.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/setup.png">
 
 # Features
 
@@ -63,7 +66,7 @@ Right click on a selected block of code, run `ChatGPT: Explain` command for Chat
 
 If the bot isn't responding, try clearing your cache by running the `ChatGPT: Clear session` command.
 
-# Contributions
+# Credits
 
 - Open AI ChatGPT: https://chat.openai.com/
 - ChatGPT API: https://github.com/transitive-bullshit/chatgpt-api
