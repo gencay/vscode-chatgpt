@@ -1,0 +1,16 @@
+.vscode/**
+.vscode-test/**
+node_modules/**
+src/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+images/**
+temp/**
+!images/ai-logo.jpg
+!images/openai-logo.svg
+chatgpt-4.7.2
