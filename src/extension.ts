@@ -34,23 +34,11 @@ export async function activate(context: vscode.ExtensionContext) {
 		selectionCommandHandler(chatGptExtensionConfig.get("promptPrefix.addTests")!);
 	});
 
-	const findProblems = vscode.commands.registerCommand("vscode-chatgpt.findProblems", () => {
-		selectionCommandHandler(chatGptExtensionConfig.get("promptPrefix.findProblems")!);
-	});
-
-	const optimize = vscode.commands.registerCommand("vscode-chatgpt.optimize", () => {
-		selectionCommandHandler(chatGptExtensionConfig.get("promptPrefix.optimize")!);
-	});
-
-	const explain = vscode.commands.registerCommand("vscode-chatgpt.explain", () => {
-		selectionCommandHandler(chatGptExtensionConfig.get("promptPrefix.explain")!);
-	});
-
 	const clear = vscode.commands.registerCommand("vscode-chatgpt.clearSession", () => {
 		context.globalState.update("chatgpt-session-token", null);
 	});
 
-	context.subscriptions.push(view, freeText, addTests, findProblems, optimize, explain, clear);
+	context.subscriptions.push(view, freeText, addTests, clear);
 }
 
 export function deactivate() { }
