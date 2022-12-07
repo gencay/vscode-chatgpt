@@ -106,7 +106,7 @@
       "properties": {
         "chatgpt.promptPrefix.addTests": {
           "type": "string",
-          "default": "Implement tests for the following code",
+          "default": "Question 1: What are some test cases for this code? Question 2: Using chai, write some unit tests for this code:",
           "description": "The prompt prefix used for adding tests for the selected code"
         },
         "chatgpt.promptPrefix.findProblems": {
