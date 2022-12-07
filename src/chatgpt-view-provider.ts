@@ -33,10 +33,19 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 
 		webviewView.webview.html = this.getWebviewHtml(webviewView.webview);
 
-		webviewView.webview.onDidReceiveMessage(data => {
+		webviewView.webview.onDidReceiveMessage(async data => {
 			switch (data.type) {
 				case 'addFreeTextQuestion':
 					this.sendApiRequest(data.value);
+					break;
+				case 'editCode':
+					vscode.window.activeTextEditor?.insertSnippet(new vscode.SnippetString(data.value));
+					break;
+				case 'openNew':
+					const document = await vscode.workspace.openTextDocument({
+						content: data.value,
+					});
+					vscode.window.showTextDocument(document);
 					break;
 				default:
 					break;
@@ -71,7 +80,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 			}
 		}
 
-		let response;
+		let response: string;
 		let question = prompt;
 
 		if (code != null) {
@@ -90,6 +99,14 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 
 		try {
 			await this.chatGptApi.ensureAuth();
+
+			setTimeout(() => {
+				if (!response) {
+					this.sendMessage({ type: 'addError' });
+					vscode.window.showErrorMessage("Failed to get response in 30 seconds. Please try again.");
+				}
+			}, 30000);
+
 			response = await this.chatGptApi.sendMessage(question);
 		} catch (error: any) {
 			vscode.window.showErrorMessage("Failed to instantiate the ChatGPT API. Try ChatGPT: Clear session.", error?.message);
@@ -130,7 +147,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 			<body class="overflow-hidden">
 				<div class="flex flex-col h-screen">
 					<div class="flex-1 overflow-y-auto" id="qa-list"></div>
-					<div id="in-progress" class="p-4 flex items-center hidden">
+					<div id="in-progress" class="pl-4 flex items-center hidden">
 						<div class="typing">Typing</div>
 						<div class="spinner">
 							<div class="bounce1"></div>
@@ -148,7 +165,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 								placeholder="Ask a question..."
 							></textarea>
 						</div>
-						<button style="background: var(--vscode-button-background)" id="ask-button" class="p-2 ml-5">
+						<button style="background: var(--vscode-button-background);color: var(--vscode-button-foreground)" id="ask-button" class="p-2 ml-5">
 							Ask
 						</button>
 					</div>

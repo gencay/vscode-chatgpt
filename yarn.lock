@@ -369,6 +369,13 @@ buffers@~0.1.1:
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/buffers/-/buffers-0.1.1.tgz#b24579c3bed4d6d396aeee6d9a8ae7f5482ab7bb"
   integrity sha1-skV5w77U1tOWru5tmorn9Ugqt7s=
 
+busboy@^1.6.0:
+  version "1.6.0"
+  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/busboy/-/busboy-1.6.0.tgz#966ea36a9502e43cdb9146962523b92f531f6893"
+  integrity sha1-lm6japUC5DzbkUaWJSO5L1MfaJM=
+  dependencies:
+    streamsearch "^1.1.0"
+
 callsites@^3.0.0:
   version "3.1.0"
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
@@ -399,17 +406,19 @@ character-entities@^2.0.0:
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/character-entities/-/character-entities-2.0.2.tgz#2d09c2e72cd9523076ccb21157dff66ad43fcc22"
   integrity sha1-LQnC5yzZUjB2zLIRV9/2atQ/zCI=
 
-chatgpt@^1.4.0:
-  version "1.4.0"
-  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/chatgpt/-/chatgpt-1.4.0.tgz#2a94c0c9bf30d14d2b0cf8be08a33b35ce82c3f5"
-  integrity sha1-KpTAyb8w0U0rDPi+CKM7Nc6Cw/U=
+chatgpt@^2.0.3:
+  version "2.0.3"
+  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/chatgpt/-/chatgpt-2.0.3.tgz#b3be792cd68aa7ced99acdeca43a6210dbc292a0"
+  integrity sha1-s755LNaKp87Zms3spDpiENvCkqA=
   dependencies:
     eventsource-parser "^0.0.5"
     expiry-map "^2.0.0"
-    node-fetch "2"
+    p-timeout "^6.0.0"
     remark "^14.0.2"
     strip-markdown "^5.0.0"
     uuid "^9.0.0"
+  optionalDependencies:
+    undici "^5.13.0"
 
 chokidar@3.5.3:
   version "3.5.3"
@@ -1521,13 +1530,6 @@ natural-compare@^1.4.0:
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-node-fetch@2:
-  version "2.6.7"
-  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
-  integrity sha1-JN6fuoJ+O0rkTciyAlajeRYAUq0=
-  dependencies:
-    whatwg-url "^5.0.0"
-
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
@@ -1570,6 +1572,11 @@ p-locate@^5.0.0:
   integrity sha1-g8gxXGeFAF470CGDlBHJ4RDm2DQ=
   dependencies:
     p-limit "^3.0.2"
+
+p-timeout@^6.0.0:
+  version "6.0.0"
+  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/p-timeout/-/p-timeout-6.0.0.tgz#84c210f5500da1af4c31ab2768d794e5e081dd91"
+  integrity sha1-hMIQ9VANoa9MMasnaNeU5eCB3ZE=
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -1772,6 +1779,11 @@ slash@^3.0.0:
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha1-ZTm+hwwWWtvVJAIg2+Nh8bxNRjQ=
 
+streamsearch@^1.1.0:
+  version "1.1.0"
+  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
+  integrity sha1-QE3R4iR8qUr1VOhBqO8OqiONp2Q=
+
 string-width@^4.1.0, string-width@^4.2.0:
   version "4.2.3"
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
@@ -1840,11 +1852,6 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-tr46@~0.0.3:
-  version "0.0.3"
-  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
-  integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
-
 "traverse@>=0.3.0 <0.4":
   version "0.3.9"
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/traverse/-/traverse-0.3.9.tgz#717b8f220cc0bb7b44e40514c22b2e8bbc70d8b9"
@@ -1893,6 +1900,13 @@ typescript@^4.9.3:
   version "4.9.3"
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/typescript/-/typescript-4.9.3.tgz#3aea307c1746b8c384435d8ac36b8a2e580d85db"
   integrity sha1-OuowfBdGuMOEQ12Kw2uKLlgNhds=
+
+undici@^5.13.0:
+  version "5.13.0"
+  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/undici/-/undici-5.13.0.tgz#56772fba89d8b25e39bddc8c26a438bd73ea69bb"
+  integrity sha1-VncvuonYsl45vdyMJqQ4vXPqabs=
+  dependencies:
+    busboy "^1.6.0"
 
 unified@^10.0.0:
   version "10.1.2"
@@ -1996,19 +2010,6 @@ vfile@^5.0.0:
     is-buffer "^2.0.0"
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
-
-webidl-conversions@^3.0.0:
-  version "3.0.1"
-  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
-  integrity sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
-
-whatwg-url@^5.0.0:
-  version "5.0.0"
-  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
-  integrity sha1-lmRU6HZUYuN2RNNib2dCzotwll0=
-  dependencies:
-    tr46 "~0.0.3"
-    webidl-conversions "^3.0.0"
 
 which@^2.0.1:
   version "2.0.2"
