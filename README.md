@@ -12,19 +12,17 @@
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/features.png">
 
-# Setup
-
-Follow the instructions here to get your access token: https://github.com/transitive-bullshit/chatgpt-api#how-it-works
-
-During your first interaction with the extension, you will be asked to enter your access token.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/setup.png">
-
 # Features
 
-The extension comes with context menu commands, conversation window and customization options for OpenAI's ChatGPT prompts.
+The extension comes with context menu commands, copy/move suggested code into editor with one-click, conversation window and customization options for OpenAI's ChatGPT prompts.
 
 ## ChatGPT conversation window in vs-code
+
+Copy or insert the code ChatGPT is suggesting right into your editor.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/code-actions.png">
+
+---
 
 Ask free-form text questions that will be listed in the conversation window. The conversation is kept in cache until vs-code instance is closed.
 
@@ -38,11 +36,15 @@ Right click on a selected block of code, run `ChatGPT: Add Tests` command for Ch
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust-test.png">
 
+---
+
 ## Find problems in your code
 
 Right click on a selected block of code, run `ChatGPT: Find problems` command for ChatGPT to analyze and find problems in your code.
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust-problem.png">
+
+---
 
 ## Improve & optimize your code
 
@@ -50,11 +52,21 @@ Right click on a selected block of code, run `ChatGPT: Optimize` command for Cha
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/python-optimize.png">
 
+---
+
 ## Explain your code
 
 Right click on a selected block of code, run `ChatGPT: Explain` command for ChatGPT to explain the selected code.
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/python-explain.png">
+
+# Setup
+
+Follow the instructions here to get your access token: https://github.com/transitive-bullshit/chatgpt-api#how-it-works
+
+During your first interaction with the extension, you will be asked to enter your access token.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/setup.png">
 
 # Settings
 
@@ -66,7 +78,10 @@ Right click on a selected block of code, run `ChatGPT: Explain` command for Chat
 
 If the bot isn't responding, try clearing your cache by running the `ChatGPT: Clear session` command.
 
+It's possible that openai systems may experience issues responding to your queries due to high-traffic from time to time.
+
 # Credits
 
 - Open AI ChatGPT: https://chat.openai.com/
+- Open AI Dall-E-2: https://openai.com/dall-e-2/
 - ChatGPT API: https://github.com/transitive-bullshit/chatgpt-api

@@ -2,8 +2,13 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.2.0] - 2022-12-07
 
-## [Unreleased]
+- Introducing new ways to interact with the suggested code
+- Copy code to clipboard
+- Insert code to text editor
+- Create a new file with the ChatGPT suggested code
 
-- Initial release
+## [0.1.0] - 2022-12-6
+
+- Initial release of the ChatGPT - VS Code extension.
