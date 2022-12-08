@@ -59,7 +59,6 @@ export async function activate(context: vscode.ExtensionContext) {
 		if (e.affectsConfiguration('chatgpt.response.showNotification')) {
 			provider.subscribeToResponse = vscode.workspace.getConfiguration("chatgpt").get("response.showNotification") || false;
 		}
-
 	});
 
 	context.subscriptions.push(view, freeText, ...registeredCommands, clear, configChanged);

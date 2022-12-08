@@ -143,3 +143,32 @@ textarea::placeholder {
         transform: scale(1.0);
     }
 }
+
+button.ask-button:hover {
+    cursor: pointer;
+    color: var(--vscode-button-secondaryForeground);
+    background: var(--vscode-button-secondaryBackground);
+}
+
+.textarea-wrapper {
+    display: grid;
+}
+
+.textarea-wrapper::after {
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+
+.textarea-wrapper>textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.textarea-wrapper>textarea,
+.textarea-wrapper::after {
+    border: 1px solid black;
+    padding: .5rem 8rem .5rem .5rem;
+    font: inherit;
+    grid-area: 1 / 1 / 2 / 2;
+}
