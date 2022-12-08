@@ -38,9 +38,9 @@ Right click on a selected block of code, run `ChatGPT: Add Tests` command for Ch
 
 ---
 
-## Find problems in your code
+## Find bugs in your code
 
-Right click on a selected block of code, run `ChatGPT: Find problems` command for ChatGPT to analyze and find problems in your code.
+Right click on a selected block of code, run `ChatGPT: Find bugs` command for ChatGPT to analyze and find bugs in your code.
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust-problem.png">
 
