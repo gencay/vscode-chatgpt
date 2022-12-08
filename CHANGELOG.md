@@ -2,6 +2,11 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [1.2.0] - 2022-12-07
+
+- Automatically highlight code in conversation view
+- UX improvements addressing #4 and #8
+
 ## [1.1.0] - 2022-12-07
 
 - Adding a new configuration to opt-in to receive notifications when chatgpt responds.
