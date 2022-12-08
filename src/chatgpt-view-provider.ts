@@ -5,6 +5,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	private webView?: vscode.WebviewView;
 	private chatGptApi?: ChatGPTAPI;
 	private sessionToken?: string;
+	public subscribeToResponse: boolean;
 
 	/**
 	 * Message to be rendered lazily if they haven't been rendered
@@ -13,6 +14,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	private leftOverMessage?: any;
 
 	constructor(private context: vscode.ExtensionContext) {
+		this.subscribeToResponse = vscode.workspace.getConfiguration("chatgpt").get("response.showNotification") || false;
 	}
 
 	public resolveWebviewView(
@@ -108,6 +110,12 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 			}, 30000);
 
 			response = await this.chatGptApi.sendMessage(question);
+
+			if (this.subscribeToResponse) {
+				vscode.window.showInformationMessage('ChatGPT responded to your question.', "Open conversation").then(async () => {
+					await vscode.commands.executeCommand('vscode-chatgpt.view.focus');
+				});
+			}
 		} catch (error: any) {
 			vscode.window.showErrorMessage("Failed to instantiate the ChatGPT API. Try ChatGPT: Clear session.", error?.message);
 			return;

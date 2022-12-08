@@ -55,7 +55,14 @@ export async function activate(context: vscode.ExtensionContext) {
 		context.globalState.update("chatgpt-session-token", null);
 	});
 
-	context.subscriptions.push(view, freeText, ...registeredCommands, clear);
+	const configChanged = vscode.workspace.onDidChangeConfiguration(e => {
+		if (e.affectsConfiguration('chatgpt.response.showNotification')) {
+			provider.subscribeToResponse = vscode.workspace.getConfiguration("chatgpt").get("response.showNotification") || false;
+		}
+
+	});
+
+	context.subscriptions.push(view, freeText, ...registeredCommands, clear, configChanged);
 }
 
 export function deactivate() { }
