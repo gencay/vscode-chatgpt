@@ -4,7 +4,7 @@
   "displayName": "ChatGPT - Add tests, find bugs and improve your code",
   "icon": "images/iconWhite.png",
   "description": "A visual studio code extension to support ChatGPT in IDE. The extension is pair-programmed with ChatGPT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "url": "https://github.com/gencay/vscode-chatgpt"
   },
@@ -123,6 +123,11 @@
           "type": "string",
           "default": "Explain the following code",
           "description": "The prompt prefix used for explaining the selected code"
+        },
+        "chatgpt.response.showNotification": {
+          "type": "boolean",
+          "default": false,
+          "description": "Choose whether you'd like to receive a notification when ChatGPT bot responds to your query."
         }
       }
     }

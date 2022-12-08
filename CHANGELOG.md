@@ -2,7 +2,13 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
-## [0.2.0] - 2022-12-07
+## [1.1.0] - 2022-12-07
+
+- Adding a new configuration to opt-in to receive notifications when chatgpt responds.
+  - This config is set to false by default to prevent notification spams.
+  - If users are interested in it due to high-volume latencies, they can opt-in to get notifications when answers are ready.
+
+## [1.0.0] - 2022-12-07
 
 - Introducing new ways to interact with the suggested code
 - Copy code to clipboard
