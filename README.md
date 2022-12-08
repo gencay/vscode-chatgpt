@@ -1,7 +1,7 @@
 <h2 align="center"><img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/iconWhite.png" height="64"><br>Ask ChatGPT</h2>
 <p align="center"><strong>ChatGPT conversations in Visual Studio Code</strong></p>
 
-[![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.svg)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+[![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
 # Level up your coding experience
 
