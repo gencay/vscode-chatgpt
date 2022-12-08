@@ -107,9 +107,9 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 			setTimeout(() => {
 				if (!response) {
 					this.sendMessage({ type: 'addError' });
-					vscode.window.showErrorMessage("Failed to get response in 30 seconds. Please try again.");
+					vscode.window.showErrorMessage("Failed to get response in 60 seconds. Please try again.");
 				}
-			}, 30000);
+			}, 60000);
 
 			response = await this.chatGptApi.sendMessage(question);
 

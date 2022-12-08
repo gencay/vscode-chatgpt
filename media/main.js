@@ -49,6 +49,7 @@
                     </div>`;
 
                 document.getElementById("in-progress")?.classList?.remove("hidden");
+                list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 break;
             case "addResponse":
                 document.getElementById("in-progress")?.classList?.add("hidden");
@@ -114,6 +115,7 @@
                     </div>`;
 
                 document.getElementById("in-progress")?.classList?.add("hidden");
+                list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 break;
             default:
                 break;
