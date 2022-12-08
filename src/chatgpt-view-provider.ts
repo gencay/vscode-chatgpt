@@ -150,7 +150,8 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 				<link href="${stylesMainUri}" rel="stylesheet">
-
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
+				<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
 				<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 				<script src="https://cdn.tailwindcss.com"></script>
 			</head>
