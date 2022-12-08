@@ -104,7 +104,7 @@
         }
     });
 
-    document.getElementById("ask-button")?.addEventListener("click", function (e) {
+    const addFreeTextQuestion = () => {
         const input = document.getElementById("question-input");
         if (input.value?.length > 0) {
             vscode.postMessage({
@@ -114,6 +114,18 @@
 
             input.value = "";
         }
+    };
+
+    document.getElementById('question-input').addEventListener("keydown", function (event) {
+        if (event.key == "Enter" && !event.shiftKey) {
+            event.preventDefault();
+            addFreeTextQuestion();
+        }
+    });
+
+    document.getElementById("ask-button")?.addEventListener("click", function (e) {
+        e.preventDefault();
+        addFreeTextQuestion();
     });
 
     document.addEventListener("click", (e) => {
