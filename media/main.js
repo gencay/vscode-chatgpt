@@ -103,6 +103,8 @@
                         <p class="font-bold mb-5 flex">${aiSvg}ChatGPT</p>
                         <div>${markedResponse.documentElement.innerHTML}</div>
                     </div>`;
+
+                list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 break;
             case "addError":
                 list.innerHTML +=
