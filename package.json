@@ -1,10 +1,10 @@
 {
   "name": "vscode-chatgpt",
   "publisher": "gencay",
-  "displayName": "ChatGPT - Add tests, find bugs and improve your code",
+  "displayName": "ChatGPT - Your copilot to improve your code, add tests & find bugs",
   "icon": "images/openai-icon.png",
   "description": "ChatGPT conversation support. Create new files & projects with one click",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "repository": {
     "url": "https://github.com/gencay/vscode-chatgpt"
   },
@@ -17,6 +17,13 @@
     "Formatters",
     "Programming Languages",
     "Linters"
+  ],
+  "keywords": [
+    "copilot",
+    "openai",
+    "chatgpt",
+    "testing",
+    "find bugs"
   ],
   "activationEvents": [
     "onView:vscode-chatgpt.view",
