@@ -1,10 +1,10 @@
 {
   "name": "vscode-chatgpt",
   "publisher": "gencay",
-  "displayName": "ChatGPT - Your copilot to improve your code, add tests & find bugs",
+  "displayName": "ChatGPT - Copilot to improve your code, add tests & find bugs",
   "icon": "images/openai-icon.png",
   "description": "ChatGPT conversation support. Create new files & projects with one click",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "repository": {
     "url": "https://github.com/gencay/vscode-chatgpt"
   },
@@ -164,6 +164,6 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "chatgpt": "^2.0.3"
+    "chatgpt": "^2.0.5"
   }
 }
