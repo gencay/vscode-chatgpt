@@ -5,7 +5,7 @@
 
 # Level up your coding experience
 
-- 🍻 Have a conversation with ChatGPT with follow-ups.
+- 🍻 Optimized for dialogue! Have a conversation with ChatGPT with follow-ups.
 - 💯 Get help from ChatGPT within vs-code for implementing test cases, explaining it or finding bugs.
 - 📝 Create projects/files with one click using built-in actions in the conversation view.
 - ⚡ Built-in syntax highlighting for ChatGPT suggested code.
@@ -19,9 +19,15 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 ## ChatGPT conversation window in vs-code
 
-### 🍻 Have a conversation with ChatGPT
+### 🍻 Optimized for dialogue
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/conversation-mode.png">
+
+---
+
+### Edit and resend a previous prompt
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/edit-resend.png">
 
 ---
 
