@@ -43,7 +43,7 @@
                     : message.value;
 
                 list.innerHTML +=
-                    `<div class="p-4 self-end mb-4" style="background: var(--vscode-list-hoverBackground)">
+                    `<div class="p-4 self-end mt-4" style="background: var(--vscode-list-hoverBackground)">
                         <p class="font-bold mb-5 flex">${userSvg}You</p>
                         <div>${html}</div>
                     </div>`;
@@ -100,7 +100,7 @@
                 });
 
                 list.innerHTML +=
-                    `<div class="p-4 self-end mb-4 pb-8">
+                    `<div class="p-4 self-end mt-4 pb-8">
                         <p class="font-bold mb-5 flex">${aiSvg}ChatGPT</p>
                         <div>${markedResponse.documentElement.innerHTML}</div>
                     </div>`;
@@ -109,7 +109,7 @@
                 break;
             case "addError":
                 list.innerHTML +=
-                    `<div class="p-4 self-end mb-4 pb-8">
+                    `<div class="p-4 self-end mt-4 pb-8">
                         <p class="font-bold mb-5 flex">${aiSvg}ChatGPT</p>
                         <div class="text-red-400">${marked.parse("An error occurred. If this issue persists please clear your session token with `ChatGPT: Clear session` command and/or restart your Visual Studio Code. If you still experience issues, it may be due to outage on https://openai.com services.")}</div>
                     </div>`;
