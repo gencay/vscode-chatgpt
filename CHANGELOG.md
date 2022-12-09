@@ -2,6 +2,12 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [1.4.0] - 2022-12-08
+
+- Introduced edit and resend feature 🚀. Addressing #6
+- Edit previous prompt in-place
+- Better font-family support for code highlighter
+
 ## [1.3.0] - 2022-12-08
 
 - Continuous conversations with ChatGPT with follow-ups. Addressing #7
