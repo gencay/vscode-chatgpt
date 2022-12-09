@@ -1,8 +1,6 @@
 import { ChatGPTAPI, ChatGPTConversation } from 'chatgpt';
 import * as vscode from 'vscode';
 
-const sendSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>`;
-
 export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	private webView?: vscode.WebviewView;
 	private chatGptApi?: ChatGPTAPI;
@@ -138,9 +136,14 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	}
 
 	private getWebviewHtml(webview: vscode.Webview) {
-
 		const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'main.js'));
 		const stylesMainUri = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'main.css'));
+
+		const vendorHighlightCss = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'highlight.min.css'));
+		const vendorHighlightJs = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'highlight.min.js'));
+		const vendorMarkedJs = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'marked.min.js'));
+		const vendorTailwindJs = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'tailwindcss.3.2.4.min.js'));
+
 
 		return `<!DOCTYPE html>
 			<html lang="en">
@@ -149,15 +152,15 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 				<link href="${stylesMainUri}" rel="stylesheet">
-				<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
-				<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
-				<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-				<script src="https://cdn.tailwindcss.com"></script>
+				<link href="${vendorHighlightCss}" rel="stylesheet">
+				<script src="${vendorHighlightJs}"></script>
+				<script src="${vendorMarkedJs}"></script>
+				<script src="${vendorTailwindJs}"></script>
 			</head>
 			<body class="overflow-hidden">
 				<div class="flex flex-col h-screen">
 					<div class="flex-1 overflow-y-auto" id="qa-list"></div>
-					<div id="in-progress" class="pl-4 flex items-center hidden">
+					<div id="in-progress" class="pl-4 pt-4 flex items-center hidden">
 						<div class="typing">Typing</div>
 						<div class="spinner">
 							<div class="bounce1"></div>
@@ -175,7 +178,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 								onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
 						</div>
 						<button class="right-8 absolute ask-button rounded-lg p-0.5 ml-5" id="ask-button">
-							${sendSvg}
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
 						</button>
 					</div>
 				</div>
