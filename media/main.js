@@ -21,7 +21,11 @@
 
     const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" /></svg>`;
 
-    const checkSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>`;
+    const checkSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" /></svg>`;
+
+    const cancelSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
+
+    const sendSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>`;
 
     const pencilSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>`;
 
@@ -43,8 +47,15 @@
                     : message.value;
 
                 list.innerHTML +=
-                    `<div class="p-4 self-end mt-4" style="background: var(--vscode-list-hoverBackground)">
+                    `<div class="p-4 self-end mt-4 question-element-gnc" style="background: var(--vscode-list-hoverBackground)">
                         <p class="font-bold mb-5 flex">${userSvg}You</p>
+                        <div class="mb-2 flex items-center">
+                            <button title="Edit and resend this prompt" class="resend-element-gnc p-1 pr-2 flex items-center" style="background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground);">${pencilSvg}Edit and resend</button>
+                            <div class="hidden send-cancel-elements-gnc flex gap-4">
+                                <button title="Send this prompt" class="send-element-gnc p-1 pr-2 flex items-center" style="background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground);">${sendSvg}Send</button>
+                                <button title="Cancel" class="cancel-element-gnc p-1 pr-2 flex items-center" style="background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground);">${cancelSvg}Cancel</button>
+                            </div>
+                        </div>
                         <div>${html}</div>
                     </div>`;
 
@@ -100,7 +111,7 @@
                 });
 
                 list.innerHTML +=
-                    `<div class="p-4 self-end mt-4 pb-8">
+                    `<div class="p-4 self-end mt-4 pb-8 answer-element-gnc">
                         <p class="font-bold mb-5 flex">${aiSvg}ChatGPT</p>
                         <div>${markedResponse.documentElement.innerHTML}</div>
                     </div>`;
@@ -109,7 +120,7 @@
                 break;
             case "addError":
                 list.innerHTML +=
-                    `<div class="p-4 self-end mt-4 pb-8">
+                    `<div class="p-4 self-end mt-4 pb-8 error-element-gnc">
                         <p class="font-bold mb-5 flex">${aiSvg}ChatGPT</p>
                         <div class="text-red-400">${marked.parse("An error occurred. If this issue persists please clear your session token with `ChatGPT: Clear session` command and/or restart your Visual Studio Code. If you still experience issues, it may be due to outage on https://openai.com services.")}</div>
                     </div>`;
@@ -147,34 +158,78 @@
     });
 
     document.addEventListener("click", (e) => {
-        if (e.target?.classList.contains("code-element-gnc")) {
+        const targetButton = e.target.closest('button');
+
+        if (targetButton?.classList?.contains("code-element-gnc")) {
             e.preventDefault();
-            navigator.clipboard.writeText(e.target.parentElement?.parentElement?.lastChild?.textContent).then(() => {
-                e.target.innerHTML = checkSvg + "Copied";
+            navigator.clipboard.writeText(targetButton.parentElement?.parentElement?.lastChild?.textContent).then(() => {
+                targetButton.innerHTML = checkSvg + "Copied";
 
                 setTimeout(() => {
-                    e.target.innerHTML = copySvg + "Copy code";
+                    targetButton.innerHTML = copySvg + "Copy code";
                 }, 1500);
             });
 
             return;
         }
 
-        if (e.target?.classList.contains("edit-element-gnc")) {
+        if (targetButton?.classList?.contains("edit-element-gnc")) {
             e.preventDefault();
             vscode.postMessage({
                 type: "editCode",
-                value: e.target.parentElement?.parentElement?.lastChild?.textContent,
+                value: targetButton.parentElement?.parentElement?.lastChild?.textContent,
             });
 
             return;
         }
 
-        if (e.target?.classList.contains("new-code-element-gnc")) {
+        if (targetButton?.classList?.contains("resend-element-gnc")) {
+            e.preventDefault();
+            const question = targetButton.closest(".question-element-gnc");
+            const elements = targetButton.nextElementSibling;
+            elements.classList.remove("hidden");
+            question.lastElementChild?.setAttribute("contenteditable", true);
+
+            targetButton.classList.add("hidden");
+
+            return;
+        }
+
+        if (targetButton?.classList?.contains("send-element-gnc")) {
+            e.preventDefault();
+
+            const question = targetButton.closest(".question-element-gnc");
+            const elements = targetButton.closest(".send-cancel-elements-gnc");
+            const resendElement = targetButton.parentElement.parentElement.firstElementChild;
+            elements.classList.add("hidden");
+            resendElement.classList.remove("hidden");
+            question.lastElementChild?.setAttribute("contenteditable", false);
+
+            if (question.lastElementChild.textContent?.length > 0) {
+                vscode.postMessage({
+                    type: "addFreeTextQuestion",
+                    value: question.lastElementChild.textContent,
+                });
+            }
+            return;
+        }
+
+        if (targetButton?.classList?.contains("cancel-element-gnc")) {
+            e.preventDefault();
+            const question = targetButton.closest(".question-element-gnc");
+            const elements = targetButton.closest(".send-cancel-elements-gnc");
+            const resendElement = targetButton.parentElement.parentElement.firstElementChild;
+            elements.classList.add("hidden");
+            resendElement.classList.remove("hidden");
+            question.lastElementChild?.setAttribute("contenteditable", false);
+            return;
+        }
+
+        if (targetButton?.classList?.contains("new-code-element-gnc")) {
             e.preventDefault();
             vscode.postMessage({
                 type: "openNew",
-                value: e.target.parentElement?.parentElement?.lastChild?.textContent,
+                value: targetButton.parentElement?.parentElement?.lastChild?.textContent,
             });
 
             return;

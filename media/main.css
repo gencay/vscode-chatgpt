@@ -88,6 +88,10 @@ textarea::placeholder {
     color: var(--vscode-input-placeholderForeground);
 }
 
+[contenteditable='true'] {
+    outline: 1px solid var(--vscode-focusBorder);
+}
+
 /* CSS Spinner */
 .spinner {
     width: 36px;
