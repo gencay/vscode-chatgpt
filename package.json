@@ -4,7 +4,7 @@
   "displayName": "ChatGPT - Copilot to improve your code, add tests & find bugs",
   "icon": "images/openai-icon.png",
   "description": "ChatGPT conversation support. Create new files & projects with one click",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "repository": {
     "url": "https://github.com/gencay/vscode-chatgpt"
   },
