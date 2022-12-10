@@ -59,9 +59,9 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 # Setup
 
-Follow the instructions here to get your access token: https://github.com/transitive-bullshit/chatgpt-api#session-tokens
+Follow the instructions here to get your session token: https://github.com/transitive-bullshit/chatgpt-api#session-tokens
 
-During your first interaction with the extension, you will be asked to enter your access token.
+During your first interaction with the extension, you will be asked to enter your session token.
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/setup.png">
 

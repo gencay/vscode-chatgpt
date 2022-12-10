@@ -66,16 +66,16 @@ button {
     text-align: center;
     outline: 1px solid transparent;
     outline-offset: 2px !important;
-    color: var(--vscode-button-secondaryForeground);
-    background: var(--vscode-button-secondaryBackground);
+    color: var(--vscode-button-secondaryForeground) !important;
+    background: var(--vscode-button-secondaryBackground) !important;
 }
 
 button:hover {
-    background: var(--vscode-button-secondaryHoverBackground);
+    background: var(--vscode-button-secondaryHoverBackground) !important;
 }
 
 button:hover svg {
-    stroke: var(--vscode-button-secondaryForeground);
+    stroke: var(--vscode-button-secondaryForeground) !important;
 }
 
 button:focus {
