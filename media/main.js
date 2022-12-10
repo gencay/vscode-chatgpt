@@ -45,17 +45,17 @@
         switch (message.type) {
             case "addQuestion":
                 const html = message.code != null
-                    ? marked.parseInline(message.value + "<br /> <br /><pre><code class='block whitespace-pre overflow-x-scroll'>```" + message.code + "```</code></pre>")
+                    ? marked.parse(message.value + "\r\n\n\n```\n" + message.code + "\n```")
                     : message.value;
 
                 list.innerHTML +=
                     `<div class="p-4 self-end mt-4 question-element-gnc relative" style="background: var(--vscode-list-hoverBackground)">
                         <p class="font-bold mb-5 flex">${userSvg}You</p>
                         <div class="mb-2 flex items-center">
-                            <button title="Edit and resend this prompt" class="resend-element-gnc p-2 flex items-center rounded-lg absolute right-6 top-2" style="background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground);">${pencilSvg}</button>
-                            <div class="hidden send-cancel-elements-gnc flex gap-4">
-                                <button title="Send this prompt" class="send-element-gnc p-1 pr-2 flex items-center" style="background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground);">${sendSvg}Send</button>
-                                <button title="Cancel" class="cancel-element-gnc p-1 pr-2 flex items-center" style="background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground);">${cancelSvg}Cancel</button>
+                            <button title="Edit and resend this prompt" class="resend-element-gnc p-2 flex items-center rounded-lg absolute right-6 top-2">${pencilSvg}</button>
+                            <div class="hidden send-cancel-elements-gnc flex gap-2">
+                                <button title="Send this prompt" class="send-element-gnc p-1 pr-2 flex items-center">${sendSvg}Send</button>
+                                <button title="Cancel" class="cancel-element-gnc p-1 pr-2 flex items-center">${cancelSvg}Cancel</button>
                             </div>
                         </div>
                         <div>${html}</div>
@@ -71,7 +71,7 @@
                 const preCodeList = markedResponse.querySelectorAll("pre > code");
 
                 preCodeList.forEach((preCode, index) => {
-                    preCode.parentElement.classList.add("pre-code-element", "relative", "mt-4");
+                    preCode.parentElement.classList.add("pre-code-element", "relative");
 
                     if (index != preCodeList.length - 1) {
                         preCode.parentElement.classList.add("mb-8");
@@ -80,7 +80,7 @@
                     preCode.classList.add("block", "whitespace-pre", "overflow-x-scroll");
 
                     const buttonWrapper = document.createElement("div");
-                    buttonWrapper.classList.add("code-actions-wrapper", "flex", "gap-4", "flex-wrap", "items-center", "right-0", "top-0", "absolute");
+                    buttonWrapper.classList.add("code-actions-wrapper", "flex", "gap-4", "flex-wrap", "items-center", "right-2", "top-1", "absolute");
 
                     // Create copy to clipboard button
                     const copyButton = document.createElement("button");
@@ -88,24 +88,18 @@
                     copyButton.innerHTML = clipboardSvg;
 
                     copyButton.classList.add("code-element-gnc", "p-2", "flex", "items-center", "rounded-lg");
-                    copyButton.style.background = "var(--vscode-button-secondaryBackground)";
-                    copyButton.style.color = "var(--vscode-button-secondaryForeground)";
 
                     const insert = document.createElement("button");
                     insert.title = "Insert the below code to the current file";
                     insert.innerHTML = insertSvg;
 
                     insert.classList.add("edit-element-gnc", "p-2", "flex", "items-center", "rounded-lg");
-                    insert.style.background = "var(--vscode-button-secondaryBackground)";
-                    insert.style.color = "var(--vscode-button-secondaryForeground)";
 
                     const newTab = document.createElement("button");
                     newTab.title = "Create a new file with the below code";
                     newTab.innerHTML = plusSvg;
 
                     newTab.classList.add("new-code-element-gnc", "p-2", "flex", "items-center", "rounded-lg");
-                    newTab.style.background = "var(--vscode-button-secondaryBackground)";
-                    newTab.style.color = "var(--vscode-button-secondaryForeground)";
 
                     buttonWrapper.append(copyButton, insert, newTab);
 

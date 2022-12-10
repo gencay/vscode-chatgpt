@@ -39,6 +39,10 @@ a:active {
     color: var(--vscode-textLink-activeForeground);
 }
 
+pre {
+    margin-top: 1rem !important;
+}
+
 code {
     font-family: var(--vscode-editor-font-family) !important;
 }
@@ -49,13 +53,16 @@ button {
     text-align: center;
     outline: 1px solid transparent;
     outline-offset: 2px !important;
-    color: var(--vscode-button-foreground);
-    background: var(--vscode-button-background);
+    color: var(--vscode-button-secondaryForeground);
+    background: var(--vscode-button-secondaryBackground);
 }
 
 button:hover {
-    cursor: pointer;
-    background: var(--vscode-button-hoverBackground);
+    background: var(--vscode-button-secondaryHoverBackground);
+}
+
+button:hover svg {
+    stroke: var(--vscode-button-secondaryForeground);
 }
 
 button:focus {
@@ -147,12 +154,6 @@ textarea::placeholder {
     }
 }
 
-button.ask-button:hover {
-    cursor: pointer;
-    color: var(--vscode-button-secondaryForeground);
-    background: var(--vscode-button-secondaryBackground);
-}
-
 .textarea-wrapper {
     display: grid;
 }
@@ -177,7 +178,7 @@ button.ask-button:hover {
 }
 
 .pre-code-element .code-actions-wrapper {
-    opacity: 0.25;
+    opacity: 0.70;
 }
 
 .pre-code-element:hover .code-actions-wrapper {
