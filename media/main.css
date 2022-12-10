@@ -175,3 +175,12 @@ button.ask-button:hover {
     font: inherit;
     grid-area: 1 / 1 / 2 / 2;
 }
+
+.pre-code-element .code-actions-wrapper {
+    opacity: 0.25;
+}
+
+.pre-code-element:hover .code-actions-wrapper {
+    opacity: 1;
+    display: flex;
+}
