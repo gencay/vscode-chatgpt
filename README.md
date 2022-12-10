@@ -21,7 +21,7 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 ### 🍻 Optimized for dialogue
 
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/conversation-mode.png">
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/conversation-mode-2.png">
 
 ---
 
@@ -43,37 +43,14 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 ---
 
-## Add tests for your code
+# Use defaults or customize your code prompts
 
-Right click on a selected block of code, run `ChatGPT: Add Tests` command for ChatGPT to write tests for you.
+- Right click on a selected block of code, run `ChatGPT: Add Tests` command for ChatGPT to write tests for you.
+- Right click on a selected block of code, run `ChatGPT: Find bugs` command for ChatGPT to analyze and find bugs in your code.
+- Right click on a selected block of code, run `ChatGPT: Optimize` command for ChatGPT to add suggestions to your code to improve.
+- Right click on a selected block of code, run `ChatGPT: Explain` command for ChatGPT to explain the selected code.
 
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust-test.png">
-
----
-
-## Find bugs in your code
-
-Right click on a selected block of code, run `ChatGPT: Find bugs` command for ChatGPT to analyze and find bugs in your code.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust-problem.png">
-
----
-
-## Improve & optimize your code
-
-Right click on a selected block of code, run `ChatGPT: Optimize` command for ChatGPT to add suggestions to your code to improve.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/python-optimize.png">
-
----
-
-## Explain your code
-
-Right click on a selected block of code, run `ChatGPT: Explain` command for ChatGPT to explain the selected code.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/python-explain.png">
-
-# Customization settings
+## Customization settings
 
 - You can configure the commands to use any prompts for the selected code!
 - Opt-in to receive notification when ChatGPT sends you a message!
@@ -90,9 +67,9 @@ During your first interaction with the extension, you will be asked to enter you
 
 # Troubleshooting
 
-If the bot isn't responding, try clearing your cache by running the `ChatGPT: Clear session` command.
-
-It's possible that openai systems may experience issues responding to your queries due to high-traffic from time to time.
+- If the bot isn't responding, try clearing your cache by running the `ChatGPT: Clear session` command.
+- It's possible that openai systems may experience issues responding to your queries due to high-traffic from time to time.
+- If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments
 
 # Credits
 
