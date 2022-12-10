@@ -58,7 +58,7 @@
                                 <button title="Cancel" class="cancel-element-gnc p-1 pr-2 flex items-center">${cancelSvg}Cancel</button>
                             </div>
                         </div>
-                        <div>${html}</div>
+                        <div class="overflow-y-auto">${html}</div>
                     </div>`;
 
                 document.getElementById("in-progress")?.classList?.remove("hidden");
