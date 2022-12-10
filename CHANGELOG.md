@@ -2,12 +2,16 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
-## [1.4.2] - 2022-12-08
+## [1.4.3] - 2022-12-10
+
+- 🚀 Better theming support in markdown
+
+## [1.4.2] - 2022-12-10
 
 - Update icons and SVGs used in conversation window.
 - Show copy to clipboard buttons on hover for better UX.
 
-## [1.4.0] - 2022-12-08
+## [1.4.0] - 2022-12-09
 
 - Introduced edit and resend feature 🚀. Addressing #6
 - Edit previous prompt in-place
