@@ -1,7 +1,18 @@
+/**
+ * @author Ali Gençay
+ * https://github.com/gencay/vscode-chatgpt
+ *
+ * @license
+ * Copyright (c) 2022 - Present, Ali Gençay
+ *
+ * All rights reserved. Code licensed under the MIT license
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ */
+
 // @ts-nocheck
 
-// This script will be run within the webview itself
-// It cannot access the main VS Code APIs directly.
 (function () {
     const vscode = acquireVsCodeApi();
 
