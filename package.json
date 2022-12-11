@@ -4,7 +4,7 @@
   "displayName": "ChatGPT - Copilot to improve your code, add tests & find bugs",
   "icon": "images/openai-icon.png",
   "description": "ChatGPT conversation support. Create new files & projects with one click",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "repository": {
     "url": "https://github.com/gencay/vscode-chatgpt"
   },
@@ -23,7 +23,8 @@
     "openai",
     "chatgpt",
     "testing",
-    "find bugs"
+    "find bugs",
+    "ai"
   ],
   "activationEvents": [
     "onView:vscode-chatgpt.view",
