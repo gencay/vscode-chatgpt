@@ -91,6 +91,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 					placeHolder: "Enter the JWT Token starting with ey***"
 				})
 				.then((value) => {
+					reset = true;
 					this.sessionToken = value!;
 					this.context.globalState.update("chatgpt-session-token", this.sessionToken);
 				});
@@ -158,11 +159,12 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	/**
 	 * Message sender, stores if a message cannot be delivered
 	 * @param message Message to be sent to WebView
+	 * @param ignoreMessageIfNullWebView We will ignore the command if webView is null/not-focused
 	 */
-	public sendMessage(message: any) {
+	public sendMessage(message: any, ignoreMessageIfNullWebView?: boolean) {
 		if (this.webView) {
 			this.webView?.webview.postMessage(message);
-		} else {
+		} else if (!ignoreMessageIfNullWebView) {
 			this.leftOverMessage = message;
 		}
 	}
@@ -226,7 +228,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 
 					<div class="flex-1 overflow-y-auto" id="qa-list"></div>
 
-					<div id="in-progress" class="pl-4 pt-4 flex items-center hidden">
+					<div id="in-progress" class="pl-4 pt-2 flex items-center hidden">
 						<div class="typing">Typing</div>
 						<div class="spinner">
 							<div class="bounce1"></div>

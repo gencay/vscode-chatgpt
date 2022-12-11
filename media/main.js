@@ -143,6 +143,12 @@
                 document.getElementById("chat-button-wrapper")?.classList?.remove("hidden");
                 list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 break;
+            case "clearConversation":
+                clearConversation();
+                break;
+            case "exportConversation":
+                exportConversation();
+                break;
             default:
                 break;
         }
@@ -160,6 +166,30 @@
         }
     };
 
+    const clearConversation = () => {
+        document.getElementById("qa-list").innerHTML = "";
+
+        document.getElementById("introduction")?.classList?.remove("hidden");
+        document.getElementById("chat-button-wrapper")?.classList?.add("hidden");
+
+        vscode.postMessage({
+            type: "clearConversation"
+        });
+
+    };
+
+    const exportConversation = () => {
+        const turndownService = new TurndownService();
+        turndownService.remove('no-export');
+        let markdown = turndownService.turndown(document.getElementById("qa-list"));
+
+        vscode.postMessage({
+            type: "openNew",
+            value: markdown,
+            language: "markdown"
+        });
+    };
+
     document.getElementById('question-input').addEventListener("keydown", function (event) {
         if (event.key == "Enter" && !event.shiftKey) {
             event.preventDefault();
@@ -173,38 +203,18 @@
         if (targetButton?.id === "ask-button") {
             e.preventDefault();
             addFreeTextQuestion();
-
             return;
         }
 
         if (targetButton?.id === "clear-button") {
             e.preventDefault();
-
-            document.getElementById("qa-list").innerHTML = "";
-
-            document.getElementById("introduction")?.classList?.remove("hidden");
-            document.getElementById("chat-button-wrapper")?.classList?.add("hidden");
-
-            vscode.postMessage({
-                type: "clearConversation"
-            });
-
+            clearConversation();
             return;
         }
 
         if (targetButton?.id === "export-button") {
             e.preventDefault();
-
-            const turndownService = new TurndownService();
-            turndownService.remove('no-export');
-            let markdown = turndownService.turndown(document.getElementById("qa-list"));
-
-            vscode.postMessage({
-                type: "openNew",
-                value: markdown,
-                language: "markdown"
-            });
-
+            exportConversation();
             return;
         }
 
