@@ -129,6 +129,10 @@
                 list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 break;
             case "addError":
+                if (!list.innerHTML) {
+                    return;
+                }
+
                 list.innerHTML +=
                     `<div class="p-4 self-end mt-4 pb-8 error-element-gnc">
                         <h2 class="font-bold mb-5 flex">${aiSvg}ChatGPT</h2>

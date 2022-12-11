@@ -65,7 +65,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 					vscode.window.showTextDocument(document);
 					break;
 				case 'clearConversation':
-					this.prepareConversation();
+					this.prepareConversation(true);
 					break;
 				default:
 					break;
@@ -79,24 +79,29 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 		}
 	}
 
-	private async prepareConversation(): Promise<boolean> {
+	private async prepareConversation(reset?: boolean): Promise<boolean> {
 		this.sessionToken = await this.context.globalState.get("chatgpt-session-token") as string;
 
 		if (this.sessionToken == null) {
 			await vscode.window
-				.showInputBox({ prompt: "Please enter your OpenAPI session token (__Secure-next-auth.session-token)", ignoreFocusOut: true, placeHolder: "Enter the JWT Token starting with ey***" })
+				.showInputBox({
+					title: "OpenAPI ChatpGPT session token",
+					prompt: "Please enter your OpenAPI session token (__Secure-next-auth.session-token). See Readme for more details on how to get the session token",
+					ignoreFocusOut: true,
+					placeHolder: "Enter the JWT Token starting with ey***"
+				})
 				.then((value) => {
 					this.sessionToken = value!;
 					this.context.globalState.update("chatgpt-session-token", this.sessionToken);
 				});
 		}
 
-		if (this.chatGptApi == null || this.chatGptConversation == null) {
+		if (reset || this.chatGptApi == null || this.chatGptConversation == null) {
 			try {
 				this.chatGptApi = new ChatGPTAPI({ sessionToken: this.sessionToken });
 				this.chatGptConversation = this.chatGptApi.getConversation();
 			} catch (error: any) {
-				vscode.window.showErrorMessage("Failed to instantiate the ChatGPT API. Try ChatGPT: Clear session.", error?.message);
+				vscode.window.showErrorMessage("Failed to instantiate the ChatGPT API. Try ChatGPT: Clear session", error?.message);
 				this.sendMessage({ type: 'addError' });
 				return false;
 			}
