@@ -61,14 +61,14 @@
 
                 list.innerHTML +=
                     `<div class="p-4 self-end mt-4 question-element-gnc relative" style="background: var(--vscode-input-background)">
-                        <p class="font-bold mb-5 flex">${userSvg}You</p>
-                        <div class="mb-2 flex items-center">
+                        <h2 class="font-bold mb-5 flex">${userSvg}You</h2>
+                        <no-export class="mb-2 flex items-center">
                             <button title="Edit and resend this prompt" class="resend-element-gnc p-2 flex items-center rounded-lg absolute right-6 top-2">${pencilSvg}</button>
                             <div class="hidden send-cancel-elements-gnc flex gap-2">
                                 <button title="Send this prompt" class="send-element-gnc p-1 pr-2 flex items-center">${sendSvg}Send</button>
                                 <button title="Cancel" class="cancel-element-gnc p-1 pr-2 flex items-center">${cancelSvg}Cancel</button>
                             </div>
-                        </div>
+                        </no-export>
                         <div class="overflow-y-auto">${html}</div>
                     </div>`;
 
@@ -122,7 +122,7 @@
 
                 list.innerHTML +=
                     `<div class="p-4 self-end mt-4 pb-8 answer-element-gnc">
-                        <p class="font-bold mb-5 flex">${aiSvg}ChatGPT</p>
+                        <h2 class="font-bold mb-5 flex">${aiSvg}ChatGPT</h2>
                         <div>${markedResponse.documentElement.innerHTML}</div>
                     </div>`;
 
@@ -131,7 +131,7 @@
             case "addError":
                 list.innerHTML +=
                     `<div class="p-4 self-end mt-4 pb-8 error-element-gnc">
-                        <p class="font-bold mb-5 flex">${aiSvg}ChatGPT</p>
+                        <h2 class="font-bold mb-5 flex">${aiSvg}ChatGPT</h2>
                         <div class="text-red-400">${marked.parse("An error occurred. If this issue persists please clear your session token with `ChatGPT: Clear session` command and/or restart your Visual Studio Code. If you still experience issues, it may be due to outage on https://openai.com services.")}</div>
                     </div>`;
 
@@ -190,9 +190,15 @@
 
         if (targetButton?.id === "export-button") {
             e.preventDefault();
+
+            const turndownService = new TurndownService();
+            turndownService.remove('no-export');
+            let markdown = turndownService.turndown(document.getElementById("qa-list"));
+
             vscode.postMessage({
                 type: "openNew",
-                value: document.getElementById("qa-list")?.textContent
+                value: markdown,
+                language: "markdown"
             });
 
             return;
