@@ -169,6 +169,7 @@ textarea::placeholder {
 
 .textarea-wrapper {
     display: grid;
+    max-height: 20rem;
 }
 
 .textarea-wrapper::after {
@@ -179,7 +180,8 @@ textarea::placeholder {
 
 .textarea-wrapper>textarea {
     resize: none;
-    overflow: hidden;
+    overflow: hidden auto;
+    max-height: 20rem;
 }
 
 .textarea-wrapper>textarea,

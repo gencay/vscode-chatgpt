@@ -60,7 +60,7 @@
                     : message.value;
 
                 list.innerHTML +=
-                    `<div class="p-4 self-end mt-4 question-element-gnc relative" style="background: var(--vscode-list-hoverBackground)">
+                    `<div class="p-4 self-end mt-4 question-element-gnc relative" style="background: var(--vscode-input-background)">
                         <p class="font-bold mb-5 flex">${userSvg}You</p>
                         <div class="mb-2 flex items-center">
                             <button title="Edit and resend this prompt" class="resend-element-gnc p-2 flex items-center rounded-lg absolute right-6 top-2">${pencilSvg}</button>
