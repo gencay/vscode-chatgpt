@@ -60,6 +60,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 				case 'openNew':
 					const document = await vscode.workspace.openTextDocument({
 						content: data.value,
+						language: data.language
 					});
 					vscode.window.showTextDocument(document);
 					break;
@@ -169,6 +170,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 		const vendorHighlightJs = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'highlight.min.js'));
 		const vendorMarkedJs = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'marked.min.js'));
 		const vendorTailwindJs = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'tailwindcss.3.2.4.min.js'));
+		const vendorTurndownJs = webview.asWebviewUri(vscode.Uri.joinPath(this.context.extensionUri, 'media', 'vendor', 'turndown.js'));
 
 		return `<!DOCTYPE html>
 			<html lang="en">
@@ -181,6 +183,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 				<script src="${vendorHighlightJs}"></script>
 				<script src="${vendorMarkedJs}"></script>
 				<script src="${vendorTailwindJs}"></script>
+				<script src="${vendorTurndownJs}"></script>
 			</head>
 			<body class="overflow-hidden">
 				<div class="flex flex-col h-screen">
@@ -227,7 +230,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 						</div>
 					</div>
 
-					<div id="chat-button-wrapper" class="w-full flex gap-4 justify-center items-center hidden">
+					<div id="chat-button-wrapper" class="w-full flex gap-4 justify-center items-center mt-2 hidden">
 						<button class="flex gap-2 justify-center items-center rounded-lg p-2" id="clear-button">
 							<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
 							Clear conversation
@@ -240,7 +243,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 						</button>
 					</div>
 
-					<div class="p-4 flex items-center">
+					<div class="p-4 flex items-center pt-2">
 						<div class="flex-1 textarea-wrapper">
 							<textarea
 								type="text"
