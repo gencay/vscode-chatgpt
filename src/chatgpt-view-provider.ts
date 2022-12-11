@@ -213,7 +213,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 								</ul>
 							</div>
 						</div>
-						<p class="absolute bottom-0 max-w-sm text-center text-xs text-slate-500">Disclaimer: This extension uses unofficial ChatGPT APIs. The author is not responsible for any issues. Get your session token <a href="https://chat.openai.com">here</a>.<br /><a href="https://github.com/gencay/vscode-chatgpt">©️ Open-sourced product</a></p>
+						<p class="absolute bottom-0 max-w-sm text-center text-xs text-slate-500">Get your session token <a href="https://chat.openai.com">here</a>.<br /><a href="https://github.com/gencay/vscode-chatgpt">©️ Open source</a></p>
 					</div>
 
 					<div class="flex-1 overflow-y-auto" id="qa-list"></div>
