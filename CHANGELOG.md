@@ -2,7 +2,11 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
-## [1.5.0] - 2022-12-10
+## [1.6.0] - 2022-12-11
+
+- 🆕 New vs-code commands to Clear and Export conversations
+
+## [1.5.0] - 2022-12-11
 
 - 🆕 Clear conversations and reset thread
 - 🆕 Export all your conversation dialogue into a new tab with single click

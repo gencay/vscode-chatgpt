@@ -4,7 +4,7 @@
   "displayName": "ChatGPT - Copilot to improve your code, add tests & find bugs",
   "icon": "images/openai-icon.png",
   "description": "ChatGPT conversation support. Create new files & projects with one click",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "repository": {
     "url": "https://github.com/gencay/vscode-chatgpt"
   },
@@ -33,7 +33,9 @@
     "onCommand:vscode-chatgpt.addTests",
     "onCommand:vscode-chatgpt.findProblems",
     "onCommand:vscode-chatgpt.optimize",
-    "onCommand:vscode-chatgpt.explain"
+    "onCommand:vscode-chatgpt.explain",
+    "onCommand:vscode-chatgpt.clearConversation",
+    "onCommand:vscode-chatgpt.exportConversation"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -89,6 +91,14 @@
         "command": "vscode-chatgpt.explain",
         "title": "ChatGPT: Explain",
         "enablement": "editorHasSelection"
+      },
+      {
+        "command": "vscode-chatgpt.clearConversation",
+        "title": "ChatGPT: Clear conversation"
+      },
+      {
+        "command": "vscode-chatgpt.exportConversation",
+        "title": "ChatGPT: Export conversation"
       }
     ],
     "viewsContainers": {

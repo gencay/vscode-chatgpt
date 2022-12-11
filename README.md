@@ -53,10 +53,25 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 # Use defaults or customize your code prompts
 
-- Right click on a selected block of code, run `ChatGPT: Add Tests` command for ChatGPT to write tests for you.
-- Right click on a selected block of code, run `ChatGPT: Find bugs` command for ChatGPT to analyze and find bugs in your code.
-- Right click on a selected block of code, run `ChatGPT: Optimize` command for ChatGPT to add suggestions to your code to improve.
-- Right click on a selected block of code, run `ChatGPT: Explain` command for ChatGPT to explain the selected code.
+- `ChatGPT: Add Tests`: Write tests for you. Right click on a selected block of code, run command.
+  - "default": "Implement tests for the following code",
+  - "description": "The prompt prefix used for adding tests for the selected code"
+- `ChatGPT: Find bugs`: Analyze and find bugs in your code. Right click on a selected block of code, run command.
+  - "default": "Find problems with the following code",
+  - "description": "The prompt prefix used for finding problems for the selected code"
+- `ChatGPT: Optimize`: Add suggestions to your code to improve. Right click on a selected block of code, run command.
+  - "default": "Optimize the following code",
+  - "description": "The prompt prefix used for optimizing the selected code"
+- `ChatGPT: Explain`: Explain the selected code. Right click on a selected block of code, run command.
+  - "default": "Explain the following code",
+  - "description": "The prompt prefix used for explaining the selected code"
+
+## Other available commands
+
+- `ChatGPT: Ask anything`: Free-form text questions within conversation window.
+- `ChatGPT: Clear session`: Clears the current session. Useful in case of API errors.
+- `ChatGPT: Clear conversation`: Clears the conversation window and resets the thread to start a new conversation with ChatGPT
+- `ChatGPT: Export conversation`: Exports the whole conversation in Markdown for you to easily store and find the Q&A list.
 
 ## Customization settings
 
