@@ -2,6 +2,12 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [1.5.0] - 2022-12-10
+
+- 🆕 Clear conversations and reset thread
+- 🆕 Export all your conversation dialogue into a new tab with single click
+- 🆕 Added a new introduction page that shows up before the conversation starts
+
 ## [1.4.3] - 2022-12-10
 
 - 🚀 Better theming support in markdown
