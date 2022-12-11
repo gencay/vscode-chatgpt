@@ -185,7 +185,7 @@ textarea::placeholder {
 .textarea-wrapper>textarea,
 .textarea-wrapper::after {
     border: 1px solid black;
-    padding: .5rem 8rem .5rem .5rem;
+    padding: .5rem 5rem .5rem .5rem;
     font: inherit;
     grid-area: 1 / 1 / 2 / 2;
 }
