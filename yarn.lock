@@ -406,10 +406,10 @@ character-entities@^2.0.0:
   resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/character-entities/-/character-entities-2.0.2.tgz#2d09c2e72cd9523076ccb21157dff66ad43fcc22"
   integrity sha1-LQnC5yzZUjB2zLIRV9/2atQ/zCI=
 
-chatgpt@^2.0.5:
-  version "2.0.5"
-  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/chatgpt/-/chatgpt-2.0.5.tgz#136da7fe9dd1cf1a2c626be028214f0621734e27"
-  integrity sha1-E22n/p3RzxosYmvgKCFPBiFzTic=
+chatgpt@^2.0.7:
+  version "2.0.7"
+  resolved "https://msazure.pkgs.visualstudio.com/_packaging/AzurePortal/npm/registry/chatgpt/-/chatgpt-2.0.7.tgz#cb1f6aa81604917b4c389cfc2e9186f81566d7d3"
+  integrity sha1-yx9qqBYEkXtMOJz8LpGG+BVm19M=
   dependencies:
     eventsource-parser "^0.0.5"
     expiry-map "^2.0.0"
