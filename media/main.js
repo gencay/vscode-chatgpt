@@ -73,10 +73,13 @@
                     </div>`;
 
                 document.getElementById("in-progress")?.classList?.remove("hidden");
+                document.getElementById("chat-button-wrapper")?.classList?.add("hidden");
+                document.getElementById("introduction")?.classList?.add("hidden");
                 list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 break;
             case "addResponse":
                 document.getElementById("in-progress")?.classList?.add("hidden");
+                document.getElementById("chat-button-wrapper")?.classList?.remove("hidden");
 
                 const markedResponse = new DOMParser().parseFromString(marked.parse(message.value), "text/html");
                 const preCodeList = markedResponse.querySelectorAll("pre > code");
@@ -133,6 +136,7 @@
                     </div>`;
 
                 document.getElementById("in-progress")?.classList?.add("hidden");
+                document.getElementById("chat-button-wrapper")?.classList?.remove("hidden");
                 list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                 break;
             default:
@@ -159,13 +163,40 @@
         }
     });
 
-    document.getElementById("ask-button")?.addEventListener("click", function (e) {
-        e.preventDefault();
-        addFreeTextQuestion();
-    });
-
     document.addEventListener("click", (e) => {
         const targetButton = e.target.closest('button');
+
+        if (targetButton?.id === "ask-button") {
+            e.preventDefault();
+            addFreeTextQuestion();
+
+            return;
+        }
+
+        if (targetButton?.id === "clear-button") {
+            e.preventDefault();
+
+            document.getElementById("qa-list").innerHTML = "";
+
+            document.getElementById("introduction")?.classList?.remove("hidden");
+            document.getElementById("chat-button-wrapper")?.classList?.add("hidden");
+
+            vscode.postMessage({
+                type: "clearConversation"
+            });
+
+            return;
+        }
+
+        if (targetButton?.id === "export-button") {
+            e.preventDefault();
+            vscode.postMessage({
+                type: "openNew",
+                value: document.getElementById("qa-list")?.textContent
+            });
+
+            return;
+        }
 
         if (targetButton?.classList?.contains("code-element-gnc")) {
             e.preventDefault();
