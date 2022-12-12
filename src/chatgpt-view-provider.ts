@@ -115,7 +115,8 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 					title: "OpenAPI ChatpGPT user agent",
 					prompt: "Please enter your OpenAPI user agent (user-agent). See Readme for more details on how to get the user agent",
 					ignoreFocusOut: true,
-					placeHolder: "Enter the user agent"
+					placeHolder: "Enter the user agent",
+					value: this.userAgent
 				})
 				.then((value) => {
 					this.userAgent = value!;
