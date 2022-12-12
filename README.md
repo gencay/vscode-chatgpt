@@ -3,10 +3,19 @@
 
 [![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
+## 🆕 Update - 12/12/22
+
+- You can now login with your email address and password without needing to hack into F12 Developer tools in your browser.
+- 🤖 Let the extension log you in automatically on the browser with the credentials you provided.
+- Simply enter your email and password when prompted by VS Code and let the extension log you in and grab the required tokens.
+- OpenAPI may enforce a captcha question before login. Please follow the instructions on the screen during login to solve the captcha question.
+- This extension will never attempt to store your personal information (email address + password). It's purely needed for the extension to work since the APIs we depend on are not from OpenAI official channels.
+
 # ChatGPT as your copilot to level up your developer experience
 
-- 🆕 Export all your conversation history at once.
-- 🆕 Option to clear and restart the conversation with ChatGPT.
+- 🆕 Auto-login to start a ChatGPT session.
+- ➡️ Export all your conversation history at once.
+- 🔃 Option to clear and restart the conversation with ChatGPT.
 - 🍻 Optimized for dialogue! Have a conversation with ChatGPT with follow-ups.
 - 💯 Get help from ChatGPT within vs-code for implementing test cases, explaining it or finding bugs.
 - 📝 Create projects/files with one click using built-in actions in the conversation view.
