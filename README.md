@@ -5,14 +5,11 @@
 
 ## 🆕 Update for 403:Forbidden errors - 12/12/22
 
-- You will have 2 options to bypass the 403: Forbidden errors
-  1. Add your session cookies and userAgent manually. You can grab these from session cookies `cf_clearance` and `__Secure-next-auth.session-token` + run this in console to get your User Agent: `navigator.userAgent`
-  2. Enter your email address and password to automatically login (This is WIP, not available in extension yet)
-- You can login with your email address and password without needing to hack into F12 Developer tools in your browser.
-- 🤖 Let the extension log you in automatically on the browser with the credentials you provided.
-- Simply enter your email and password when prompted by VS Code and let the extension log you in and grab the required tokens.
-- OpenAPI may enforce a captcha question before login. Please follow the instructions on the screen during login to solve the captcha question.
-- This extension will never attempt to store your personal information (email address + password). It's purely needed for the extension to work since the APIs we depend on are not from OpenAI official channels.
+- You will have following option to bypass the 403: Forbidden errors:
+  1. Add your session cookies and userAgent manually. You can grab these from session cookies `cf_clearance` and `__Secure-next-auth.session-token` + run this in console to get your User Agent: `navigator.userAgent`.
+  2. Login to OpenAI on a browser
+  3. Go to `Application` -> `Cookies` and copy over the `cf_clearance` and `__Secure-next-auth.session-token` when prompted by the extension
+  4. Run the following command in `Console` to find your user agent: `navigator.userAgent`. Enter the content of this value when prompted by the extension.
 
 # ChatGPT as your copilot to level up your developer experience
 
