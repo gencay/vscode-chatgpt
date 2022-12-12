@@ -48,6 +48,8 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	const clear = vscode.commands.registerCommand("vscode-chatgpt.clearSession", () => {
 		context.globalState.update("chatgpt-session-token", null);
+		context.globalState.update("chatgpt-clearance-token", null);
+		context.globalState.update("chatgpt-user-agent", null);
 	});
 
 	const configChanged = vscode.workspace.onDidChangeConfiguration(e => {

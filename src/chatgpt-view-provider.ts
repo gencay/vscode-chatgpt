@@ -19,6 +19,8 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	private chatGptApi?: ChatGPTAPI;
 	private chatGptConversation?: ChatGPTConversation;
 	private sessionToken?: string;
+	private clearanceToken?: string;
+	private userAgent?: string;
 	public subscribeToResponse: boolean;
 
 	/**
@@ -81,8 +83,10 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 
 	private async prepareConversation(reset?: boolean): Promise<boolean> {
 		this.sessionToken = await this.context.globalState.get("chatgpt-session-token") as string;
+		this.clearanceToken = await this.context.globalState.get("chatgpt-clearance-token") as string;
+		this.userAgent = await this.context.globalState.get("chatgpt-user-agent") as string;
 
-		if (this.sessionToken == null) {
+		if (this.sessionToken == null || this.clearanceToken == null || this.userAgent == null) {
 			await vscode.window
 				.showInputBox({
 					title: "OpenAPI ChatpGPT session token",
@@ -95,11 +99,33 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 					this.sessionToken = value!;
 					this.context.globalState.update("chatgpt-session-token", this.sessionToken);
 				});
+			await vscode.window
+				.showInputBox({
+					title: "OpenAPI ChatpGPT clearance token",
+					prompt: "Please enter your OpenAPI clearance token (cf_clearance). See Readme for more details on how to get the clearance token",
+					ignoreFocusOut: true,
+					placeHolder: "Enter the clearance token"
+				})
+				.then((value) => {
+					this.clearanceToken = value!;
+					this.context.globalState.update("chatgpt-clearance-token", this.clearanceToken);
+				});
+			await vscode.window
+				.showInputBox({
+					title: "OpenAPI ChatpGPT user agent",
+					prompt: "Please enter your OpenAPI user agent (user-agent). See Readme for more details on how to get the user agent",
+					ignoreFocusOut: true,
+					placeHolder: "Enter the user agent"
+				})
+				.then((value) => {
+					this.userAgent = value!;
+					this.context.globalState.update("chatgpt-user-agent", this.userAgent);
+				});
 		}
 
 		if (reset || this.chatGptApi == null || this.chatGptConversation == null) {
 			try {
-				this.chatGptApi = new ChatGPTAPI({ sessionToken: this.sessionToken });
+				this.chatGptApi = new ChatGPTAPI({ sessionToken: this.sessionToken, clearanceToken: this.clearanceToken, userAgent: this.userAgent });
 				this.chatGptConversation = this.chatGptApi.getConversation();
 			} catch (error: any) {
 				vscode.window.showErrorMessage("Failed to instantiate the ChatGPT API. Try ChatGPT: Clear session", error?.message);
