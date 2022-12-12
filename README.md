@@ -9,7 +9,7 @@
   1. Add your session cookies and userAgent manually. You can grab these from session cookies `cf_clearance` and `__Secure-next-auth.session-token` + run this in console to get your User Agent: `navigator.userAgent`.
   2. Login to OpenAI on a browser
   3. Go to `Application` -> `Cookies` and copy over the `cf_clearance` and `__Secure-next-auth.session-token` when prompted by the extension
-  4. Run the following command in `Console` to find your user agent: `navigator.userAgent`. Enter the content of this value when prompted by the extension.
+  4. Run the following command in `Console` to find your user agent: `navigator.userAgent`. Enter this value when prompted by the extension **(no single or double quotes)**.
 
 # ChatGPT as your copilot to level up your developer experience
 
