@@ -3,17 +3,8 @@
 
 [![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
-## 🆕 Update for 403:Forbidden errors - 12/12/22
-
-- You will have following option to bypass the 403: Forbidden errors:
-  1. Add your session cookies and userAgent manually. You can grab these from session cookies `cf_clearance` and `__Secure-next-auth.session-token` + run this in console to get your User Agent: `navigator.userAgent`.
-  2. Login to OpenAI on a browser
-  3. Go to `Application` -> `Cookies` and copy over the `cf_clearance` and `__Secure-next-auth.session-token` when prompted by the extension
-  4. Run the following command in `Console` to find your user agent: `navigator.userAgent`. Enter this value when prompted by the extension **(no single or double quotes)**.
-
 # ChatGPT as your copilot to level up your developer experience
 
-- 🆕 Auto-login to start a ChatGPT session.
 - ➡️ Export all your conversation history at once.
 - 🔃 Option to clear and restart the conversation with ChatGPT.
 - 🍻 Optimized for dialogue! Have a conversation with ChatGPT with follow-ups.
@@ -91,9 +82,19 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 # Setup
 
-Follow the instructions here to get your session token: https://github.com/transitive-bullshit/chatgpt-api#session-tokens
-
-During your first interaction with the extension, you will be asked to enter your session token.
+1. Go to https://chat.openai.com and log in.
+2. Open your browser's developer tools
+   - Hit F12 to open the developer tools in most browsers
+   - Alternatively, right click on the browser window and select `Inspect`
+3. Go to `Application` -> `Cookies` -> `https://chat.openai.com`. You will need the following cookies:
+   - `__Secure-next-auth.session-token`: The extension will use this to send prompts to ChatGPT
+   - `cf_clearance`: CloudFlare clearance token. A security measure OpenAI put in place to block automated access.
+4. Go to `Console` and type in the following code to get your `user-agent`
+   - `navigator.userAgent`: This is your browser's user-agent, needed for CloudFlare clearance. Enter the value of `userAgent` when prompted by the extension. Copy its value **without single or double quotes**.
+5. Now that you have all required session variables, run any command using the extension and you'll be asked to enter these values:
+   - `__Secure-next-auth.session-token`: An encoded token starting with `ey***`
+   - `cf_clearance`: An alpha-numeric token
+   - `userAgent`
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/setup.png">
 
@@ -101,7 +102,8 @@ During your first interaction with the extension, you will be asked to enter you
 
 - If the bot isn't responding, try clearing your cache by running the `ChatGPT: Clear session` command.
 - It's possible that openai systems may experience issues responding to your queries due to high-traffic from time to time.
-- If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments
+- If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
+- If you see `ChatGPTAPI error terminated`, your requests are being throttled. Please try again later.
 
 # Credits
 
