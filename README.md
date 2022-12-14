@@ -3,17 +3,17 @@
 
 [![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
-# 🚀🎉 Autologin support (Automated Authentication)
+# 🚀🎉 Zero Configuration (Automated Authentication)
 
-- Login and let the extension grab the required tokens automatically. Once you enable this setting, make sure to provide the path to your `Chrome` executable on your operating system (without quotes)
-- **2 options for integration**:
+- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`.
+- **2 options to run ChatGPT assistant in your vs-code**:
   1. Enable Autologin setting from vs-code settings page and let the extension log you in and grab required tokens. Described in [Autologin Setup](#autologin-setup)
   2. Manually login on a browser and grab required tokens for logging in. Described in [Manual Setup](#manual-setup)
 
 # ChatGPT as your copilot to level up your developer experience
 
-- 🚀 Automatically logs you in and grabs the required tokens on your behalf.
-- ➡️ Export all your conversation history at once.
+- 🤖 Zero-Config. Automatically logs you in and grabs the required tokens on your behalf.
+- ➡️ Export all your conversation history at once in Markdown format.
 - 🔃 Option to clear and restart the conversation with ChatGPT.
 - 🍻 Optimized for dialogue! Have a conversation with ChatGPT with follow-ups.
 - 💯 Get help from ChatGPT within vs-code for implementing test cases, explaining it or finding bugs.
@@ -93,22 +93,23 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 This option helps you grab the required tokens automatically, without needing to copy/paste tokens around 🚀.
 
-You only need to provide the extension with the path to your `Chrome` application's path.
+1. Make sure autologin setting is set to `true` (Default is `true`)
 
-1. Enable autologin setting from Settings UI
-
-  <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/autologin-setting.png">
-
-2. Enter the `Chrome` installation locations. The default Windows path is prefilled in the textbox. Change that if you would like to update the `Chrome` path for extension.
-
-   - For reference here are the defaults:
-     - Windows: C:\Program Files\Google\Chrome\Application\chrome.exe
-     - MAC: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome;
+2. Once you ask ChatGPT something, unless you already configured authentication, it'll open a `Chrome` window.
 
 3. Login to OpenAI as usual and solve captchas when prompted.
+
 4. The `Chrome` page will be closed automatically once we grab the required tokens.
 
-  <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/captcha.png">
+NOTE: The default path will be used for Chrome on your operating system. You have the option to override it in the settings (If you override, make sure to escape `\\` instead of `\`)
+
+- For reference here are the defaults:
+
+  - Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+  - MAC: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
+  - Linux: `/usr/bin/google-chrome`
+
+  <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/autologin-setting.png">
 
 # Manual Setup
 
