@@ -2,6 +2,15 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [1.8.0] - 2022-12-14
+
+- 🚀 [Experimental Feature] Automatically login without needing to copy-paste session cookies
+
+## [1.7.0] - 2022-12-12
+
+- 🚀 Automatically login without needing to copy-paste session cookies
+- OpenAI servers are experiencing exceptionally high demand, which may cause intermittent errors in this extension.
+
 ## [1.6.0] - 2022-12-11
 
 - 🆕 New vs-code commands to Clear and Export conversations
