@@ -3,12 +3,23 @@
 
 [![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
+## 📢 December 25 Update
+
+The extension is expected to work without any 403s or 429s since it will now use the browser behind the scenes to make the chatGPT requests. Please make sure that `autologin` setting is set to `true` (default is `true`) and you keep the `Chrome` browser open all the time after logging in. It'll be automatically minimized after successful login. You can then ask questions to ChatGPT via the extension as usual.
+
 # 🚀🎉 Zero Configuration (Automated Authentication)
 
-- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`.
+- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
+
 - **2 options to run ChatGPT assistant in your vs-code**:
-  1. Enable Autologin setting from vs-code settings page and let the extension log you in and grab required tokens. Described in [Autologin Setup](#autologin-setup)
-  2. Manually login on a browser and grab required tokens for logging in. Described in [Manual Setup](#manual-setup)
+
+  1. [**Recommended**] Autologin - Using browser network to ask questions to ChatGPT.
+
+     ❗Please make sure that the Chrome browser remains open while sending prompts. Extension will use the background service of the logged-in browser to send requests. Find instructions here: [Autologin Setup](#autologin-setup)
+
+     🤖 Provide email address and password in vs-code Settings if you'd like the extension to autofill those everytime you need a new browser.
+
+  2. Manually login on a browser and grab required tokens for logging in. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
 
 # ChatGPT as your copilot to level up your developer experience
 
@@ -87,21 +98,23 @@ The extension comes with context menu commands, copy/move suggested code into ed
 - You can configure the commands to use any prompts for the selected code!
 - Opt-in to receive notification when ChatGPT sends you a message!
 
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/autologin-setting.png">
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/settings.png">
 
 # Autologin Setup
 
-This option helps you grab the required tokens automatically, without needing to copy/paste tokens around 🚀.
+This option will automatically log you in and it'll use the browser in the background for your prompts. **❗Please make sure to keep the Chrome browser page open while sending queries**
 
-1. Make sure autologin setting is set to `true` (Default is `true`)
+1. If you'd like to automatically fill email address and password, update the extension settings with those information.
 
-2. Once you ask ChatGPT something, unless you already configured authentication, it'll open a `Chrome` window.
+2. Once you ask ChatGPT something, it'll open a `Chrome` window and will ask you to log in.
 
 3. Login to OpenAI as usual and solve captchas when prompted.
 
-4. The `Chrome` page will be closed automatically once we grab the required tokens.
+4. Wait till the browser is minimized after successfully logging in. The `Chrome` page needs to remain open while sending queries.
 
-NOTE: The default path will be used for Chrome on your operating system. You have the option to override it in the settings (If you override, make sure to escape `\\` instead of `\`)
+NOTE: You don't need to configure Chrome executable path since the default path will be used for Chrome on your operating system.However, you have the option to override it in the settings
+
+- Find your executable path if your configuration is different by going to this URL on your Chrome browser: `chrome://version/` -> `Executable Path`
 
 - For reference here are the defaults:
 
@@ -109,9 +122,9 @@ NOTE: The default path will be used for Chrome on your operating system. You hav
   - MAC: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
   - Linux: `/usr/bin/google-chrome`
 
-  <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/autologin-setting.png">
-
 # Manual Setup
+
+ℹ️ This method is no longer recommended since hard rate-limiting by OpenAI services. Please use the `AutoLogin` option with Zero-Configuration required.
 
 1. Go to https://chat.openai.com and log in.
 2. Open your browser's developer tools
