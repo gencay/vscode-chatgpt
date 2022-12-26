@@ -7,20 +7,6 @@
 
 The extension is expected to work without any 403s or 429s since it will now use the browser behind the scenes to make the chatGPT requests. Please make sure that `autologin` setting is set to `true` (default is `true`) and you keep the `Chrome` browser open all the time after logging in. It'll be automatically minimized after successful login. You can then ask questions to ChatGPT via the extension as usual.
 
-# 🚀🎉 Zero Configuration (Automated Authentication)
-
-- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
-
-- **2 options to run ChatGPT assistant in your vs-code**:
-
-  1. [**Recommended**] Autologin - Using browser network to ask questions to ChatGPT.
-
-     ❗Please make sure that the Chrome browser remains open while sending prompts. Extension will use the background service of the logged-in browser to send requests. Find instructions here: [Autologin Setup](#autologin-setup)
-
-     🤖 Provide email address and password in vs-code Settings if you'd like the extension to autofill those everytime you need a new browser.
-
-  2. Manually login on a browser and grab required tokens for logging in. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
-
 # ChatGPT as your copilot to level up your developer experience
 
 - 🤖 Zero-Config. Automatically logs you in and grabs the required tokens on your behalf.
@@ -37,6 +23,14 @@ The extension is expected to work without any 403s or 429s since it will now use
 # Features
 
 The extension comes with context menu commands, copy/move suggested code into editor with one-click, conversation window and customization options for OpenAI's ChatGPT prompts.
+
+## Autologin with Zero Configuration
+
+Below is a sample autologin flow. Simply login & keep your browser minimized for dialogues with ChatGPT:
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/chatgpt-autologin.gif">
+
+---
 
 ## ChatGPT conversation window in vs-code
 
@@ -70,6 +64,22 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 ---
 
+# 🚀🎉 Zero Configuration (Automated Authentication)
+
+- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
+
+- **2 options to run ChatGPT assistant in your vs-code**:
+
+  1. [**Recommended**] Autologin - Using browser network to ask questions to ChatGPT.
+
+     ❗Please make sure that the Chrome browser remains open while sending prompts. Extension will use the background service of the logged-in browser to send requests. Find instructions here: [Setup](#setup)
+
+     🤖 Provide email address and password in vs-code Settings if you'd like the extension to autofill those everytime you need a new browser.
+
+  2. Manually login on a browser and grab required tokens for logging in. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
+
+---
+
 # Use defaults or customize your code prompts
 
 - `ChatGPT: Add Tests`: Write tests for you. Right click on a selected block of code, run command.
@@ -84,12 +94,15 @@ The extension comes with context menu commands, copy/move suggested code into ed
 - `ChatGPT: Explain`: Explain the selected code. Right click on a selected block of code, run command.
   - "default": "Explain the following code",
   - "description": "The prompt prefix used for explaining the selected code"
+- `ChatGPT: Add comments`: Add comments for the selected code. Right click on a selected block of code, run command.
+  - "default": "Add comments for the following code",
+  - "description": "The prompt prefix used for adding comments for the selected code"
 
 ## Other available commands
 
 - `ChatGPT: Ask anything`: Free-form text questions within conversation window.
-- `ChatGPT: Clear session`: Clears the current session. Useful in case of API errors.
-- `ChatGPT: Clear conversation`: Clears the conversation window and resets the thread to start a new conversation with ChatGPT
+- `ChatGPT: Clear session`: Clears the current session. Useful in case of API errors in manual mode only.
+- `ChatGPT: Clear conversation`: Clears the conversation window and resets the thread to start a new conversation with ChatGPT.
 - `ChatGPT: Export conversation`: Exports the whole conversation in Markdown for you to easily store and find the Q&A list.
 
 ## Customization settings
@@ -100,33 +113,25 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/settings.png">
 
-# Autologin Setup
+# Setup
 
-This option will automatically log you in and it'll use the browser in the background for your prompts. **❗Please make sure to keep the Chrome browser page open while sending queries**
+1. Click on extension icon on your sidebar and hit `Login` button.
 
-1. If you'd like to automatically fill email address and password, update the extension settings with those information.
+2. A new `Chrome` window will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
 
-2. Once you ask ChatGPT something, it'll open a `Chrome` window and will ask you to log in.
+3. Solve captchas if you are prompted and continue.
 
-3. Login to OpenAI as usual and solve captchas when prompted.
+4. After successfully logging in, the browser will be minimized. **❗Please keep the browser window minimized/open for subsequent queries**
 
-4. Wait till the browser is minimized after successfully logging in. The `Chrome` page needs to remain open while sending queries.
+ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
 
-NOTE: You don't need to configure Chrome executable path since the default path will be used for Chrome on your operating system.However, you have the option to override it in the settings
+📝 You can auto-fill the email address and/or password during logins. Update the extension settings with those information for quicker login.
 
-- Find your executable path if your configuration is different by going to this URL on your Chrome browser: `chrome://version/` -> `Executable Path`
-
-- For reference here are the defaults:
-
-  - Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe`
-  - MAC: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
-  - Linux: `/usr/bin/google-chrome`
-
-# Manual Setup
+## Manual Setup
 
 ℹ️ This method is no longer recommended since hard rate-limiting by OpenAI services. Please use the `AutoLogin` option with Zero-Configuration required.
 
-1. Go to https://chat.openai.com and log in.
+1. Go to https://chat.openai.com and login.
 2. Open your browser's developer tools
    - Hit F12 to open the developer tools in most browsers
    - Alternatively, right click on the browser window and select `Inspect`
@@ -144,10 +149,10 @@ NOTE: You don't need to configure Chrome executable path since the default path 
 
 # Troubleshooting
 
-- If the bot isn't responding, try clearing your cache by running the `ChatGPT: Clear session` command.
 - It's possible that openai systems may experience issues responding to your queries due to high-traffic from time to time.
 - If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
 - If you see `ChatGPTAPI error terminated`, your requests are being throttled. Please try again later.
+- If you encounter persistent issues with your queries, try restarting your VS-Code and retry logging in.
 
 # Credits
 
