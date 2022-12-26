@@ -28,7 +28,7 @@ The extension is expected to work without any 403s or 429s since it will now use
 
 3. Solve captchas if you are prompted and continue.
 
-4. After successfully logging in, the browser will be minimized. **❗Please keep the browser window minimized/open for subsequent queries**
+4. After successfully logging in, the browser will be minimized.
 
 ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
 
@@ -83,7 +83,7 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 # Use defaults or customize your code prompts
 
-- `ChatGPT: Add Tests`: Write tests for you. Right click on a selected block of code, run command.
+- `ChatGPT: Add tests`: Write tests for you. Right click on a selected block of code, run command.
   - "default": "Implement tests for the following code",
   - "description": "The prompt prefix used for adding tests for the selected code"
 - `ChatGPT: Find bugs`: Analyze and find bugs in your code. Right click on a selected block of code, run command.
