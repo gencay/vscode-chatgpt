@@ -9,7 +9,7 @@ The extension is expected to work without any 403s or 429s since it will now use
 
 # ChatGPT as your copilot to level up your developer experience
 
-- 🤖 Zero-Config. Automatically logs you in and grabs the required tokens on your behalf.
+- 🤖 Zero-Config setup. Simply login to OpenAI as usual.
 - ➡️ Export all your conversation history at once in Markdown format.
 - 🔃 Option to clear and restart the conversation with ChatGPT.
 - 🍻 Optimized for dialogue! Have a conversation with ChatGPT with follow-ups.
@@ -20,17 +20,36 @@ The extension is expected to work without any 403s or 429s since it will now use
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/chatgpt-gif.gif">
 
-# Features
+# Setup
 
-The extension comes with context menu commands, copy/move suggested code into editor with one-click, conversation window and customization options for OpenAI's ChatGPT prompts.
+1. Click on extension icon on your sidebar and hit `Login` button.
 
-## Autologin with Zero Configuration
+2. A new `Chrome` window will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
 
-Below is a sample autologin flow. Simply login & keep your browser minimized for dialogues with ChatGPT:
+3. Solve captchas if you are prompted and continue.
+
+4. After successfully logging in, the browser will be minimized. **❗Please keep the browser window minimized/open for subsequent queries**
+
+ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
+
+📝 You can auto-fill the email address and/or password during logins. Update the extension settings with those information for quicker login.
+
+🤖 Below is a sample autologin flow. Simply login & keep your browser minimized for dialogues with ChatGPT:
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/chatgpt-autologin.gif">
 
----
+# 🚀🎉 Zero Configuration (Automated Authentication)
+
+- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
+
+- **2 options to run ChatGPT assistant in your vs-code**:
+
+  1. [**Recommended**] Autologin - Uses browser to ask questions to ChatGPT.
+  2. Manually login on a browser and grab required tokens. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
+
+# Features
+
+The extension comes with context menu commands, copy/move suggested code into editor with one-click, conversation window and customization options for OpenAI's ChatGPT prompts.
 
 ## ChatGPT conversation window in vs-code
 
@@ -61,34 +80,6 @@ Below is a sample autologin flow. Simply login & keep your browser minimized for
 ### Ask free-form text questions that will be listed in the conversation window. The conversation is kept in cache until vs-code instance is closed.
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust.png">
-
-# 🚀🎉 Zero Configuration (Automated Authentication)
-
-- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
-
-- **2 options to run ChatGPT assistant in your vs-code**:
-
-  1. [**Recommended**] Autologin - Using browser network to ask questions to ChatGPT.
-
-     ❗Please make sure that the Chrome browser remains open while sending prompts. Extension will use the background service of the logged-in browser to send requests. Find instructions here: [Setup](#setup)
-
-     🤖 Provide email address and password in vs-code Settings if you'd like the extension to autofill those everytime you need a new browser.
-
-  2. Manually login on a browser and grab required tokens for logging in. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
-
-# Setup
-
-1. Click on extension icon on your sidebar and hit `Login` button.
-
-2. A new `Chrome` window will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
-
-3. Solve captchas if you are prompted and continue.
-
-4. After successfully logging in, the browser will be minimized. **❗Please keep the browser window minimized/open for subsequent queries**
-
-ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
-
-📝 You can auto-fill the email address and/or password during logins. Update the extension settings with those information for quicker login.
 
 # Use defaults or customize your code prompts
 
