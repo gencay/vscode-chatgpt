@@ -62,8 +62,6 @@ Below is a sample autologin flow. Simply login & keep your browser minimized for
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust.png">
 
----
-
 # 🚀🎉 Zero Configuration (Automated Authentication)
 
 - Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
@@ -78,7 +76,19 @@ Below is a sample autologin flow. Simply login & keep your browser minimized for
 
   2. Manually login on a browser and grab required tokens for logging in. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
 
----
+# Setup
+
+1. Click on extension icon on your sidebar and hit `Login` button.
+
+2. A new `Chrome` window will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
+
+3. Solve captchas if you are prompted and continue.
+
+4. After successfully logging in, the browser will be minimized. **❗Please keep the browser window minimized/open for subsequent queries**
+
+ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
+
+📝 You can auto-fill the email address and/or password during logins. Update the extension settings with those information for quicker login.
 
 # Use defaults or customize your code prompts
 
@@ -112,20 +122,6 @@ Below is a sample autologin flow. Simply login & keep your browser minimized for
 - Opt-in to receive notification when ChatGPT sends you a message!
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/settings.png">
-
-# Setup
-
-1. Click on extension icon on your sidebar and hit `Login` button.
-
-2. A new `Chrome` window will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
-
-3. Solve captchas if you are prompted and continue.
-
-4. After successfully logging in, the browser will be minimized. **❗Please keep the browser window minimized/open for subsequent queries**
-
-ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
-
-📝 You can auto-fill the email address and/or password during logins. Update the extension settings with those information for quicker login.
 
 ## Manual Setup
 
