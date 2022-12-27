@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [2.2.0] - 2022-12-27
+
+- You can now use any Chromium-based browser for autologin. Search for setting `chatgpt:chromiumpath` to override it. Check out the Readme for more.
+
 ## [2.1.0] - 2022-12-26
 
 - Automatically login without needing to copy-paste session cookies is now live and enabled by default
