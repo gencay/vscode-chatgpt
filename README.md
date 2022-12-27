@@ -3,9 +3,9 @@
 
 [![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
-## 📢 December 25 Update
+## 📢 December 25 Update - Chromium-based browser solution
 
-The extension is expected to work without any 403s or 429s since it will now use the browser behind the scenes to make the chatGPT requests. Please make sure that `autologin` setting is set to `true` (default is `true`) and you keep the `Chrome` browser open all the time after logging in. It'll be automatically minimized after successful login. You can then ask questions to ChatGPT via the extension as usual.
+The extension is expected to work without any 403s or 429s since it will now use the browser behind the scenes to make the chatGPT requests. Please make sure that `autologin` setting is set to `true` (default is `true`) and you **keep the browser open** all the time after logging in. It'll be automatically minimized after successful login. You can then ask questions to ChatGPT via the extension as usual.
 
 # ChatGPT as your copilot to level up your developer experience
 
@@ -24,7 +24,7 @@ The extension is expected to work without any 403s or 429s since it will now use
 
 1. Click on extension icon on your sidebar and hit `Login` button.
 
-2. A new `Chrome` window will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
+2. A new browser window (Default is `Chrome` but you may override it with any Chromium-based browser) will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
 
 3. Solve captchas if you are prompted and continue.
 
@@ -37,6 +37,20 @@ The extension is expected to work without any 403s or 429s since it will now use
 🤖 Below is a sample autologin flow. Simply login & keep your browser minimized for dialogues with ChatGPT:
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/chatgpt-autologin.gif">
+
+---
+
+### Override settings with any Chromium-based browser
+
+1. To use `Edge`, go to this URL:`edge://version` and copy the executable path
+
+   - ![image](https://user-images.githubusercontent.com/1168485/209638697-a52c3aeb-fa75-4f4f-8def-8fbf71980f44.png)
+
+2. Override the chromium path by going to vs-code settings and search for `chatgpt:chromiumPath`. Paste the executable path to the textbox as shown in the below screenshot
+
+   - ![image](https://user-images.githubusercontent.com/1168485/209640657-6d0e97f8-c6d9-48e9-9673-c5d15df15ccd.png)
+
+3. [Maybe required] Restart your vs-code to make sure the change is propagated. This is required only if you have previously authenticated using a different browser.
 
 # 🚀🎉 Zero Configuration (Automated Authentication)
 
