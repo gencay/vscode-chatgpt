@@ -50,7 +50,7 @@ The extension is expected to work without any 403s or 429s since it will now use
 
    - ![image](https://user-images.githubusercontent.com/1168485/209640657-6d0e97f8-c6d9-48e9-9673-c5d15df15ccd.png)
 
-3. [Maybe required] Restart your vs-code to make sure the change is propagated. This is required only if you have previously authenticated using a different browser.
+3. [Maybe required] Run `ChatGPT: Clear session` command to clear your previous browser selection. This is required only if you have previously authenticated using a different browser.
 
 # 🚀🎉 Zero Configuration (Automated Authentication)
 
@@ -112,6 +112,8 @@ The extension comes with context menu commands, copy/move suggested code into ed
 - `ChatGPT: Add comments`: Add comments for the selected code. Right click on a selected block of code, run command.
   - "default": "Add comments for the following code",
   - "description": "The prompt prefix used for adding comments for the selected code"
+- `ChatGPT: Ad-hoc prompt`: Ad-hoc custom prompt prefix for the selected code. Right click on a selected block of code, run command.
+  - You will be asked to fill in your preferred custom prefix and the extension will remember that string for your subsequent ad-hoc queries.
 
 ## Other available commands
 
