@@ -2,6 +2,13 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [2.1.0] - 2022-12-26
+
+- Automatically login without needing to copy-paste session cookies is now live and enabled by default
+- UX improvements: moved `Clear conversation` and `Export to MD` buttons to flyout.
+- Improved error handling
+- Misc. bug fixes
+
 ## [1.8.0] - 2022-12-14
 
 - 🚀 [Experimental Feature] Automatically login without needing to copy-paste session cookies
