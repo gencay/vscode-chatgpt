@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [2.3.0] - 2022-12-27
+
+- You can now add custom prefix commands for the selected code. The extension will remember the prompt for subsequent queries. Addressing issue #28
+
 ## [2.2.0] - 2022-12-27
 
 - You can now use any Chromium-based browser for autologin. Search for setting `chatgpt:chromiumpath` to override it. Check out the Readme for more.
