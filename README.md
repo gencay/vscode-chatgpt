@@ -74,6 +74,22 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 ---
 
+### Ad-hoc prompt prefixes for you to customize what you are asking ChatGPT
+
+Customize what you are asking with the selected code. The extension will remember your prompt for subsequent questions.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/adhoc.png">
+
+---
+
+### Automatic partial code response detection
+
+The extension will detect if ChatGPT didn't complete code in their answer and it will suggest automatic continuation and combination of answers
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/continue-combine.png">
+
+---
+
 ### 🍻 Optimized for dialogue
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/conversation-mode-2.png">
@@ -95,22 +111,6 @@ The extension comes with context menu commands, copy/move suggested code into ed
 ### Ask free-form text questions that will be listed in the conversation window. The conversation is kept in cache until vs-code instance is closed.
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust.png">
-
----
-
-### Ad-hoc prompt prefixes for you to customize what you are asking ChatGPT
-
-Customize what you are asking with the selected code. The extension will remember your prompt for subsequent questions.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/adhoc.png">
-
----
-
-### Automatic partial code response detection
-
-The extension will detect if ChatGPT didn't complete code in their answer and it will suggest automatic continuation and combination of answers
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/continue-combine.png">
 
 # Use defaults or customize your code prompts
 
