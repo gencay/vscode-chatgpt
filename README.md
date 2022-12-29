@@ -10,6 +10,7 @@ The extension is expected to work without any 403s or 429s since it will now use
 # ChatGPT as your copilot to level up your developer experience
 
 - 🤖 Zero-Config setup. Simply login to OpenAI as usual.
+- 📎 Detects partial code response and suggests automatic continuation and combination of multiple answers.
 - ➡️ Export all your conversation history at once in Markdown format.
 - 💭 Preset commands + Customization to use any prompt for a selected code.
 - 📝 Create projects/files with one click using built-in actions in the conversation view.
@@ -59,7 +60,7 @@ The extension is expected to work without any 403s or 429s since it will now use
 
    - ![image](https://user-images.githubusercontent.com/1168485/209640657-6d0e97f8-c6d9-48e9-9673-c5d15df15ccd.png)
 
-3. [Maybe required] Run `ChatGPT: Clear session` command to clear your previous browser selection. This is required only if you have previously authenticated using a different browser.
+3. [Maybe required] Run `ChatGPT: Reset session` command to clear your previous browser selection. This is required only if you have previously authenticated using a different browser.
 
 # Features
 
@@ -95,6 +96,22 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/rust.png">
 
+---
+
+### Ad-hoc prompt prefixes for you to customize what you are asking ChatGPT
+
+Customize what you are asking with the selected code. The extension will remember your prompt for subsequent questions.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/adhoc.png">
+
+---
+
+### Automatic partial code response detection
+
+The extension will detect if ChatGPT didn't complete code in their answer and it will suggest automatic continuation and combination of answers
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/continue-combine.png">
+
 # Use defaults or customize your code prompts
 
 - `ChatGPT: Add tests`: Write tests for you. Right click on a selected block of code, run command.
@@ -118,7 +135,7 @@ The extension comes with context menu commands, copy/move suggested code into ed
 ## Other available commands
 
 - `ChatGPT: Ask anything`: Free-form text questions within conversation window.
-- `ChatGPT: Clear session`: Clears the current session and resets your connection with ChatGPT
+- `ChatGPT: Reset session`: Clears the current session and resets your connection with ChatGPT
 - `ChatGPT: Clear conversation`: Clears the conversation window and resets the thread to start a new conversation with ChatGPT.
 - `ChatGPT: Export conversation`: Exports the whole conversation in Markdown for you to easily store and find the Q&A list.
 
@@ -156,7 +173,7 @@ The extension comes with context menu commands, copy/move suggested code into ed
 - If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
 - If you see `ChatGPTAPI error terminated`, your requests are being throttled. Please try again later.
 - If you encounter persistent issues with your queries
-  - Try `ChatGPT: Clear conversation` command
+  - Try `ChatGPT: Reset session` command
   - As a last resort try restarting your VS-Code and retry logging in.
 
 # Disclaimer and Credits
