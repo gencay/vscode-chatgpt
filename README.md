@@ -141,11 +141,24 @@ The extension will detect if ChatGPT didn't complete code in their answer and it
 
 ## Customization settings
 
+- Use proxy with autologin puppeteer setup
 - Opt-in to use automation to authenticate OpenAI.
 - You can configure the commands to use any prompts for the selected code!
 - Opt-in to receive notification when ChatGPT sends you a message!
 
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/settings.png">
+### Using Proxies
+
+The autologin supports setting a proxy server. This is useful if you're running into rate limiting issues or if you want to use a proxy to hide your IP address. Right now this setting only supports http proxies. Don't provide a protocol in the setting.
+
+To use a proxy, update the settings with your proxy server details. For more information on the format, see [here](https://www.chromium.org/developers/design-documents/network-settings).
+
+Format examples:
+
+`authenticated`:`myUsername:myPassword@my.proxy.com:3001`
+
+`anonymous`: `204.137.172.37:999`
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/proxy-server.png">
 
 ## Manual Setup
 
@@ -182,4 +195,4 @@ The extension will detect if ChatGPT didn't complete code in their answer and it
 - This extension never uses/stores your personally identifiable information locally or remotely. It's up to you to use the extension for ChatGPT conversations and we assume no responsibility of any issues that you may face in ChatGPT. Since this is just an experimental project I work on my freetime for the community.
 - 💻 Open AI ChatGPT: https://chat.openai.com/
 - 🖼️ Open AI Dall-E-2: https://openai.com/dall-e-2/
-- 🧪 This extension uses unofficial OpenAI APIs. https://github.com/transitive-bullshit/chatgpt-api
+- 🧪 The manual setup option uses unofficial OpenAI APIs. https://github.com/transitive-bullshit/chatgpt-api
