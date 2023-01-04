@@ -2,6 +2,11 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [2.6.0] - 2022-01-04
+
+- Added proxy server. Addressing issue #32
+- Added custom timeout. Addressing issue #33
+
 ## [2.3.0] - 2022-12-27
 
 - You can now add custom prefix commands for the selected code. The extension will remember the prompt for subsequent queries. Addressing issue #28
