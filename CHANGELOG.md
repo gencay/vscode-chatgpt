@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.0.0] - 2022-01-06
+
+- Added support for Official OpenAI APIs for GPT3 and Codex using API Keys.
+
 ## [2.6.0] - 2022-01-04
 
 - Added proxy server. Addressing issue #32
