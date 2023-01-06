@@ -3,13 +3,13 @@
 
 [![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
-## 📢 December 25 Update - Chromium-based browser solution
+## 📢 Release - Use Official OpenAI GPT3 APIs
 
-The extension is expected to work without any 403s or 429s since it will now use the browser behind the scenes to make the chatGPT requests. Please make sure that `autologin` setting is set to `true` (default is `true`) and you **keep the browser open** all the time after logging in. It'll be automatically minimized after successful login. You can then ask questions to ChatGPT via the extension as usual.
+The extension now supports official APIs from OpenAI along with zero-config browser based integration. Simply switch methods in your settings and use your API Key to ask questions. If you opt-in to use this method, make sure you are aware of the limitations set by OpenAI team [here](https://help.openai.com/en/articles/5955598-is-api-usage-subject-to-any-rate-limits).
 
 # ChatGPT as your copilot to level up your developer experience
 
-- 🤖 Zero-Config setup. Simply login to OpenAI as usual.
+- 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs
 - 📎 Detects partial code response and suggests automatic continuation and combination of multiple answers.
 - ➡️ Export all your conversation history at once in Markdown format.
 - 💭 Preset commands + Customization to use any prompt for a selected code.
@@ -21,12 +21,13 @@ The extension is expected to work without any 403s or 429s since it will now use
 
 # Zero Configuration with Browser Auto Login
 
-- Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
+- **3 options to run ChatGPT assistant in your vs-code**:
 
-- **2 options to run ChatGPT assistant in your vs-code**:
+  1. [**Recommended**] Autologin - Uses browser to ask questions to ChatGPT. [Autologin Setup (Default)](#setup). Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
+  2. Use OpenAI's official GPT3 APIs - Use your personal/organizational API Keys. This method provides many parameters to customize your prompt. Check out the GPT3 settings. For more details: [GPT3 OpenAI API Key](#gpt3)
+  3. [Not recommended due to throttling] Manually login on a browser and grab required tokens. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
 
-  1. [**Recommended**] Autologin - Uses browser to ask questions to ChatGPT. [Autologin Setup (Default)](#setup)
-  2. Manually login on a browser and grab required tokens. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/methods.png">
 
 # Setup
 
@@ -159,6 +160,16 @@ Format examples:
 `anonymous`: `204.137.172.37:999`
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/proxy-server.png">
+
+## GPT3
+
+If you prefer using OpenAI's official APIs to communicate, switch your method setting to `GPT3 OpenAI API Key` and get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-keys)
+
+1. Click `Login` in your extension or ask any coding question by selecting a code fragment.
+2. Once asked provide your API Key to the extension
+   - [Optional] You could also store your API Key in your settings.json. However, it's highly discouraged due to security reasons.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/api-key.png">
 
 ## Manual Setup
 
