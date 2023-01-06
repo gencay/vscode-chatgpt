@@ -1,9 +1,9 @@
 <h2 align="center"><img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/iconWhite.png" height="64"><br>Ask ChatGPT</h2>
 <p align="center"><strong>ChatGPT conversations in Visual Studio Code</strong></p>
 
-[![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://vsmarketplacebadges.dev/version/gencay.vscode-chatgpt.png)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+[![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
 
-## 📢 Release - Use Official OpenAI GPT3 APIs
+## 📢 New feature - Use Official OpenAI GPT3 APIs or browser integration with zero-config
 
 The extension now supports official APIs from OpenAI along with zero-config browser based integration. Simply switch methods in your settings and use your API Key to ask questions. If you opt-in to use this method, make sure you are aware of the limitations set by OpenAI team [here](https://help.openai.com/en/articles/5955598-is-api-usage-subject-to-any-rate-limits).
 
