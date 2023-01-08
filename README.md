@@ -21,11 +21,11 @@ The extension now supports official APIs from OpenAI along with zero-config brow
 
 # Zero Configuration with Browser Auto Login
 
-- **3 options to run ChatGPT assistant in your vs-code**:
+### 3 options to run ChatGPT assistant in your vs-code
 
-  1. [**Recommended**] Autologin - Uses browser to ask questions to ChatGPT. [Autologin Setup (Default)](#setup). Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
-  2. Use OpenAI's official GPT3 APIs - Use your personal/organizational API Keys. This method provides many parameters to customize your prompt. Check out the GPT3 settings. For more details: [GPT3 OpenAI API Key](#gpt3)
-  3. [Not recommended due to throttling] Manually login on a browser and grab required tokens. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
+1. [**Recommended**] Autologin - Uses browser to ask questions to ChatGPT. [Autologin Setup (Default)](#setup). Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
+2. Use OpenAI's official GPT3 APIs - Use your personal/organizational API Keys. This method provides many parameters to customize your prompt. Check out the GPT3 settings. For more details: [GPT3 OpenAI API Key](#gpt3)
+3. [Not recommended due to throttling] Manually login on a browser and grab required tokens. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/methods.png">
 
@@ -51,17 +51,32 @@ The extension now supports official APIs from OpenAI along with zero-config brow
 
 ---
 
-### Override settings with any Chromium-based browser
+## Override settings with any Chromium-based browser
 
-1. To use `Edge`, go to this URL:`edge://version` and copy the executable path
-
-   - ![image](https://user-images.githubusercontent.com/1168485/209638697-a52c3aeb-fa75-4f4f-8def-8fbf71980f44.png)
-
-2. Override the chromium path by going to vs-code settings and search for `chatgpt:chromiumPath`. Paste the executable path to the textbox as shown in the below screenshot
-
-   - ![image](https://user-images.githubusercontent.com/1168485/209640657-6d0e97f8-c6d9-48e9-9673-c5d15df15ccd.png)
-
+1. To use `Edge`, go to this URL: `edge://version` and copy the executable path used by your Edge browser.
+2. Override the chromium path by going to vs-code settings and search for `chatgpt:chromiumPath`. Paste the executable path. i.e. `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`
 3. [Maybe required] Run `ChatGPT: Reset session` command to clear your previous browser selection. This is required only if you have previously authenticated using a different browser.
+
+### Run on Linux or remote - SSH workspace
+
+There are community members who are able to run the extension in WSL, Linux, remote-SSH workspaces. Please check these issues for instructions.
+
+Credits to [@EzyDark](https://github.com/EzYDark)
+
+- [How to get it work in remote workspace (Remote - SSH) #39](https://github.com/gencay/vscode-chatgpt/issues/39#issuecomment-1370272656)
+- [How to get it work under WSL2 #25](https://github.com/gencay/vscode-chatgpt/issues/25#issuecomment-1374833026)
+
+## GPT3
+
+### Official OpenAI API - GPT3 Setup
+
+If you prefer using OpenAI's official APIs to communicate, switch your method setting to `GPT3 OpenAI API Key` and get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-keys)
+
+1. Click `Login` in your extension or ask any coding question by selecting a code fragment.
+2. Once asked provide your API Key to the extension
+   - [Optional] You could also store your API Key in your settings.json. However, it's highly discouraged due to security reasons.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/api-key.png">
 
 # Features
 
@@ -115,6 +130,8 @@ The extension will detect if ChatGPT didn't complete code in their answer and it
 
 # Use defaults or customize your code prompts
 
+- `ChatGPT: Ad-hoc prompt`: Ad-hoc custom prompt prefix for the selected code. Right click on a selected block of code, run command.
+  - You will be asked to fill in your preferred custom prefix and the extension will remember that string for your subsequent ad-hoc queries.
 - `ChatGPT: Add tests`: Write tests for you. Right click on a selected block of code, run command.
   - "default": "Implement tests for the following code",
   - "description": "The prompt prefix used for adding tests for the selected code"
@@ -130,8 +147,6 @@ The extension will detect if ChatGPT didn't complete code in their answer and it
 - `ChatGPT: Add comments`: Add comments for the selected code. Right click on a selected block of code, run command.
   - "default": "Add comments for the following code",
   - "description": "The prompt prefix used for adding comments for the selected code"
-- `ChatGPT: Ad-hoc prompt`: Ad-hoc custom prompt prefix for the selected code. Right click on a selected block of code, run command.
-  - You will be asked to fill in your preferred custom prefix and the extension will remember that string for your subsequent ad-hoc queries.
 
 ## Other available commands
 
@@ -155,21 +170,11 @@ To use a proxy, update the settings with your proxy server details. For more inf
 
 Format examples:
 
-`authenticated`:`myUsername:myPassword@my.proxy.com:3001`
+Authenticated: `myUsername:myPassword@my.proxy.com:3001`
 
-`anonymous`: `204.137.172.37:999`
+Anonymous: `204.137.172.37:999`
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/proxy-server.png">
-
-## GPT3
-
-If you prefer using OpenAI's official APIs to communicate, switch your method setting to `GPT3 OpenAI API Key` and get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-keys)
-
-1. Click `Login` in your extension or ask any coding question by selecting a code fragment.
-2. Once asked provide your API Key to the extension
-   - [Optional] You could also store your API Key in your settings.json. However, it's highly discouraged due to security reasons.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/api-key.png">
 
 ## Manual Setup
 
@@ -199,7 +204,6 @@ If you prefer using OpenAI's official APIs to communicate, switch your method se
 - If you encounter persistent issues with your queries
   - Try `ChatGPT: Reset session` command
   - As a last resort try restarting your VS-Code and retry logging in.
-- If you'd like to use the extension in remote environments, check out this solution by @ezydark here: https://github.com/gencay/vscode-chatgpt/issues/39#issuecomment-1370272656
 
 # Disclaimer and Credits
 
