@@ -1,7 +1,13 @@
 <h2 align="center"><img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/iconWhite.png" height="64"><br>Ask ChatGPT</h2>
-<p align="center"><strong>ChatGPT conversations in Visual Studio Code</strong></p>
+<p align="center"><strong>ChatGPT, GPT-3 and Codex conversations in Visual Studio Code</strong></p>
 
-[![Badge for version for Visual Studio Code extension gencay.vscode-chatgpt](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+<div align="center">
+
+[![Badge for version](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code%20Marketplace&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+[![Badge for download count](https://img.shields.io/visual-studio-marketplace/d/gencay.vscode-chatgpt?color=blueviolet&label=Downloads&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+[![Github stars](https://img.shields.io/github/stars/gencay/vscode-chatgpt?color=blue&label=Github%20Stars&style=flat-square)](https://github.com/gencay/vscode-chatgpt)
+
+</div>
 
 ## 📢 New feature - Use Official OpenAI GPT3 APIs or browser integration with zero-config
 
