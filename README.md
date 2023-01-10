@@ -3,9 +3,9 @@
 
 <div align="center">
 
-[![Badge for version](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code%20Marketplace&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
-[![Badge for download count](https://img.shields.io/visual-studio-marketplace/d/gencay.vscode-chatgpt?color=blueviolet&label=Downloads&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
-[![Github stars](https://img.shields.io/github/stars/gencay/vscode-chatgpt?color=blue&label=Github%20Stars&style=flat-square)](https://github.com/gencay/vscode-chatgpt)
+[![Badge for version](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+[![Badge for download count](https://img.shields.io/visual-studio-marketplace/d/gencay.vscode-chatgpt?color=blueviolet&label=Downloads)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+[![Github stars](https://img.shields.io/github/stars/gencay/vscode-chatgpt?color=blue&label=Github%20Stars)](https://github.com/gencay/vscode-chatgpt)
 
 </div>
 
