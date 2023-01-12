@@ -2,6 +2,11 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.1.0] - 2022-01-12
+
+- You can now have conversations with GPT3 using the Official OpenAI APIs.
+- The GPT3/Codex dialogue support is similar to what ChatGPT offers. However, note that ChatGPT is more advanced in dialogues.
+
 ## [3.0.0] - 2022-01-06
 
 - Added support for Official OpenAI APIs for GPT3 and Codex using API Keys.

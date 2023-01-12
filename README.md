@@ -11,11 +11,16 @@
 
 ## 📢 New feature - Use Official OpenAI GPT3 APIs or browser integration with zero-config
 
-The extension now supports official APIs from OpenAI along with zero-config browser based integration. Simply switch methods in your settings and use your API Key to ask questions. If you opt-in to use this method, make sure you are aware of the limitations set by OpenAI team [here](https://help.openai.com/en/articles/5955598-is-api-usage-subject-to-any-rate-limits).
+The extension now supports official APIs from OpenAI along with zero-config browser based integration. Simply switch methods in your settings and use your API Key to ask questions.
+
+Dialogues are also supported in this official method similar to what ChatGPT offers. However, ChatGPT may provide better answers in conversations since it's optimized for chat.
+
+If you opt-in to use this method, make sure you are aware of the limitations set by OpenAI team [here](https://help.openai.com/en/articles/5955598-is-api-usage-subject-to-any-rate-limits).
 
 # ChatGPT as your copilot to level up your developer experience
 
-- 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs
+- 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs.
+- 💬 Supports dialogues on all methods using ChatGPT, GPT-3 or Codex code/text completions.
 - 📎 Detects partial code response and suggests automatic continuation and combination of multiple answers.
 - ➡️ Export all your conversation history at once in Markdown format.
 - 💭 Preset commands + Customization to use any prompt for a selected code.
@@ -205,6 +210,7 @@ Anonymous: `204.137.172.37:999`
 # Troubleshooting
 
 - It's possible that openai systems may experience issues responding to your queries due to high-traffic from time to time.
+- If you get `ChatGPT is at capacity right now` during autologin, try to refresh that page a couple of times until you see the login page. Refreshing may help in some cases, when there is a queue. This is unfortunately out of this extension's control.
 - If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
 - If you see `ChatGPTAPI error terminated`, your requests are being throttled. Please try again later.
 - If you encounter persistent issues with your queries
