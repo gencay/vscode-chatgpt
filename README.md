@@ -44,15 +44,17 @@ If you opt-in to use this method, make sure you are aware of the limitations set
 
 🚀 All you need to do is click Login or ask a question to get started!
 
-1. Click on extension icon on your sidebar and hit `Login` button.
+1. Click on the ChatGPT extension icon on your sidebar and hit `Login` button.
 
 2. A new browser window (Default is `Chrome` but you may override it with any Chromium-based browser) will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
+
+   - If you see a `ChatGPT is at capacity right now` message, the extension will refresh the page every 2 seconds until it's passed. If OpenAI systems are experiencing issues and the extension fails to see Login page after 10 retries, the browser will be automatically closed.
 
 3. Solve captchas if you are prompted and continue.
 
 4. After successfully logging in, the browser will be minimized.
 
-🔑 Use Google, Microsoft or standard OpenAI credentials to login. The email/password will be used to autofill the login form depending on the authentication type you choose.
+🔑 Use Google, Microsoft or standard OpenAI credentials to login. The email/password will be used to autofill the login form depending on the authentication type you choose. **NOTE**: We don't recommend storing your password in your settings.json since the file is plain text. However, you can opt-in to use it to reduce the friction during logins.
 
 ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
 
@@ -175,7 +177,7 @@ The extension will detect if ChatGPT didn't complete code in their answer and it
 - You can configure the commands to use any prompts for the selected code!
 - Opt-in to receive notification when ChatGPT sends you a message!
 
-### Using Proxies
+### Using Proxy
 
 The autologin supports setting a proxy server. This is useful if you're running into rate limiting issues or if you want to use a proxy to hide your IP address. Right now this setting only supports http proxies. Don't provide a protocol in the setting.
 
@@ -183,15 +185,12 @@ To use a proxy, update the settings with your proxy server details. For more inf
 
 Format examples:
 
-Authenticated: `myUsername:myPassword@my.proxy.com:3001`
-
-Anonymous: `204.137.172.37:999`
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/proxy-server.png">
+- Authenticated: `myUsername:myPassword@my.proxy.com:3001`
+- Anonymous: `204.137.172.37:999`
 
 ## Manual Setup
 
-ℹ️ This method is no longer recommended since hard rate-limiting by OpenAI services. Please use the `AutoLogin` option with Zero-Configuration required.
+ℹ️ This method is no longer recommended/maintained since hard rate-limiting by OpenAI services. Please use the `AutoLogin` option with Zero-Configuration required.
 
 1. Go to https://chat.openai.com and login.
 2. Open your browser's developer tools
@@ -207,12 +206,10 @@ Anonymous: `204.137.172.37:999`
    - `cf_clearance`: An alpha-numeric token
    - `userAgent`
 
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/setup.png">
-
 # Troubleshooting
 
 - It's possible that OpenAI systems may experience issues responding to your queries due to high-traffic from time to time.
-- If you get `ChatGPT is at capacity right now` during autologin, the extension will refresh the page every 2 seconds until you see the login page. Refreshing may help in some cases, when there is a queue. This is unfortunately out of this extension's control. If, even after refresh, OpenAI shows capacity error, the browser will close automatically..
+- If you get `ChatGPT is at capacity right now` during autologin, the extension will refresh the page every 2 seconds until you see the login page. Refreshing may help in some cases, when there is a queue. This is unfortunately out of this extension's control. If, even after refresh, OpenAI shows capacity error, the browser will close automatically.
 - If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
   - This could also be due to multiple browser/requests being active on OpenAI. Make sure that none of your API Keys are being actively used at the moment.
   - You could also try re-generating a new API Key [here](https://beta.openai.com/account/api-keys)
@@ -223,8 +220,10 @@ Anonymous: `204.137.172.37:999`
 
 # Disclaimer and Credits
 
-- During login you'll notice some warnings on your Chromium-based browser about flags that are used to open the browser. This is required to automate your login and conversations with the browser's network.
-- This extension never uses/stores your personally identifiable information locally or remotely. It's up to you to use the extension for ChatGPT conversations and we assume no responsibility of any issues that you may face in ChatGPT. Since this is just an experimental project I work on my freetime for the community.
+- There is no guarantee that the extension will continue to work as-is without any issues or side-effects. Please use it at your own risk. It may stop working without a notice e.g. OpenAI may decide to change all or some of its functionality, which will affect this extension.
+- This extension never uses/stores your personally identifiable information. There are some optional settings that you may opt-in to use i.e. OpenAI API Key. Please be careful of what you are storing in your settings.json file, since vs-code may sync them across their instances and it's outside of this extension's boundary. We recommend not storing any personally identifiable information in your settings.json.
+- This extension collects metadata to improve its features. No personally identifiable information is collected. You can opt-out from telemetry either by setting the global 'telemetry.telemetryLevel' or 'chatgpt.telemetry.disable'. The extension will respect both of these settings and will collect metadata only if both allow telemetry. We use the official telemetry package provided by the vscode team [here](https://github.com/Microsoft/vscode-extension-telemetry) to understand this extension's usage patterns better to plan new feature releases i.e. popularity of Browser-based autologin vs. API Key method setting.
+- We assume no responsibility of any issues that you may face using this extension. Your use of OpenAI services is subject to OpenAI's [Privacy Policy](https://openai.com/privacy/) and [Terms of Use](https://openai.com/terms/).
 - 💻 Open AI ChatGPT: https://chat.openai.com/
 - 🖼️ Open AI Dall-E-2: https://openai.com/dall-e-2/
-- 🧪 The manual setup option uses unofficial OpenAI APIs. https://github.com/transitive-bullshit/chatgpt-api
+- 🧪 The manual setup option uses [unofficial nodejs OpenAI API wrapper](https://github.com/transitive-bullshit/chatgpt-api).
