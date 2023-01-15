@@ -52,6 +52,8 @@ If you opt-in to use this method, make sure you are aware of the limitations set
 
 4. After successfully logging in, the browser will be minimized.
 
+🔑 Use Google, Microsoft or standard OpenAI credentials to login. The email/password will be used to autofill the login form depending on the authentication type you choose.
+
 ℹ️ You will need to have a browser open and be logged in at all times. If you close the browser or your VS-Code instance, you will be asked to login again in your next session.
 
 📝 You can have the extension auto-fill the email address and/or password during logins. Update the extension settings with those information for quicker login. NOTE: We never store any of this information locally or remotely.

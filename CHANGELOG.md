@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.2.0] - 2022-01-15
+
+- You can now use `Google` or `Microsoft` Authentication types during login flow to auto-fill the forms with the email/password you provide the extension with.
+
 ## [3.1.0] - 2022-01-12
 
 - You can now have conversations with GPT3 using the Official OpenAI APIs.
