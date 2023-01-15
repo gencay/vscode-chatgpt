@@ -211,9 +211,11 @@ Anonymous: `204.137.172.37:999`
 
 # Troubleshooting
 
-- It's possible that openai systems may experience issues responding to your queries due to high-traffic from time to time.
-- If you get `ChatGPT is at capacity right now` during autologin, try to refresh that page a couple of times until you see the login page. Refreshing may help in some cases, when there is a queue. This is unfortunately out of this extension's control.
+- It's possible that OpenAI systems may experience issues responding to your queries due to high-traffic from time to time.
+- If you get `ChatGPT is at capacity right now` during autologin, the extension will refresh the page every 2 seconds until you see the login page. Refreshing may help in some cases, when there is a queue. This is unfortunately out of this extension's control. If, even after refresh, OpenAI shows capacity error, the browser will close automatically..
 - If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
+  - This could also be due to multiple browser/requests being active on OpenAI. Make sure that none of your API Keys are being actively used at the moment.
+  - You could also try re-generating a new API Key [here](https://beta.openai.com/account/api-keys)
 - If you see `ChatGPTAPI error terminated`, your requests are being throttled. Please try again later.
 - If you encounter persistent issues with your queries
   - Try `ChatGPT: Reset session` command
