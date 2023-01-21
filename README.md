@@ -19,6 +19,7 @@ If you opt-in to use this method, make sure you are aware of the limitations set
 
 # ChatGPT as your copilot to level up your developer experience
 
+- 🔥 Streaming conversation support. ChatGPT will type as they think.
 - 📝 Create files/projects or fix your code with one click.
 - 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs.
 - ➡️ Export all your conversation history at once in Markdown format.

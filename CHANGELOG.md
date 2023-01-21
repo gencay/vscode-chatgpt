@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.4.0] - 2022-01-20
+
+- Streaming conversation is now available. You will see results as ChatGPT / Codex / GPT models are typing.
+
 ## [3.2.0] - 2022-01-15
 
 - You can now use `Google` or `Microsoft` Authentication types during login flow to auto-fill the forms with the email/password you provide the extension with.
