@@ -3,10 +3,15 @@
 
 <div align="center">
 
+<span>
 [![Badge for version](https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+</span>
+<span>
 [![Badge for download count](https://img.shields.io/visual-studio-marketplace/d/gencay.vscode-chatgpt?color=blueviolet&label=Downloads)](https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt)
+</span>
+<span>
 [![Github stars](https://img.shields.io/github/stars/gencay/vscode-chatgpt?color=blue&label=Github%20Stars)](https://github.com/gencay/vscode-chatgpt)
-
+</span>
 </div>
 
 ## 📢 New feature - Use Official OpenAI GPT3 APIs or browser integration with zero-config
