@@ -218,6 +218,9 @@ Format examples:
 - If you encounter persistent issues with your queries
   - Try `ChatGPT: Reset session` command
   - As a last resort try restarting your VS-Code and retry logging in.
+- If you are using Remote Development and cant login to ChatGPT
+   - In settings.json add
+   - "remote.extensionKind": {"gencay.vscode-chatgpt": ["ui"]}
 
 # Disclaimer and Credits
 
