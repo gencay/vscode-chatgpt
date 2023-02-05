@@ -22,8 +22,8 @@
 
 # ChatGPT as your copilot to level up your developer experience
 
-- 💭 Conversation support
-- 🔥 Streaming conversation support. ChatGPT will type as they think.
+- ➕ ChatGPT Plus support.
+- 🔥 Streaming conversation support for both browser and API Key method. ChatGPT will type as they think.
 - 📝 Create files/projects or fix your code with one click.
 - 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs.
 - ➡️ Export all your conversation history at once in Markdown format.
@@ -194,8 +194,8 @@ Format examples:
   - Try `ChatGPT: Reset session` command
   - As a last resort try restarting your VS-Code and retry logging in.
 - If you are using Remote Development and cant login to ChatGPT
-   - In settings.json add
-   - "remote.extensionKind": {"gencay.vscode-chatgpt": ["ui"]}
+  - In settings.json add
+  - "remote.extensionKind": {"gencay.vscode-chatgpt": ["ui"]}
 
 # Disclaimer and Credits
 

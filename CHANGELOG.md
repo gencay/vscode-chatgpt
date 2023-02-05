@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.5.5] - 2022-02-05
+
+- ChatGPT Plus support. If you have a Plus subscription, you can now use the \*-paid models for your prompts.
+
 ## [3.5.0] - 2022-02-04
 
 - The pre-release Official ChatGPT model is available via OpenAI API Key method.
