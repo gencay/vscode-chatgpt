@@ -13,16 +13,16 @@
     </a>
 </p>
 
-## 📢 New feature - Use Official OpenAI GPT3 APIs or browser integration with zero-config
+## 📢 New feature - Use pre-release ChatGPT model via API Key Method
 
-The extension now supports official APIs from OpenAI along with zero-config browser based integration. Simply switch methods in your settings and use your API Key to ask questions.
+- You can now use Pre-Release model to enable ChatGPT with API Key method
+- We made the API Key method as the default integration. Please note that the model name may change without a prior notice, which may break the ChatGPT interface. Extension will be updated once OpenAI enables the ChatGPT in production with the latest model name. If the name changes before an extension update, you could update your vs-code settings.json with another model name: `chatgpt.gpt3.model`
 
-Dialogues are also supported in this official method similar to what ChatGPT offers. However, ChatGPT may provide better answers in conversations since it's optimized for chat.
-
-If you opt-in to use this method, make sure you are aware of the limitations set by OpenAI team [here](https://help.openai.com/en/articles/5955598-is-api-usage-subject-to-any-rate-limits).
+  <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/prerelease-chatgpt-model.png">
 
 # ChatGPT as your copilot to level up your developer experience
 
+- 💭 Conversation support
 - 🔥 Streaming conversation support. ChatGPT will type as they think.
 - 📝 Create files/projects or fix your code with one click.
 - 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs.
@@ -30,17 +30,22 @@ If you opt-in to use this method, make sure you are aware of the limitations set
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/chatgpt-gif.gif">
 
-# Zero Configuration with Browser Auto Login
+# Zero Configuration with Browser or API Key setup Methods
 
-### 3 options to run ChatGPT assistant in your vs-code
-
-1. [**Recommended**] Autologin - Uses browser to ask questions to ChatGPT. [Autologin Setup (Default)](#setup). Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages.
-2. Use OpenAI's official GPT3 APIs - Use your personal/organizational API Keys. This method provides many parameters to customize your prompt. Check out the GPT3 settings. For more details: [GPT3 OpenAI API Key](#gpt3)
-3. [Not recommended due to throttling] Manually login on a browser and grab required tokens. Described in [Manual Setup](#manual-setup). This option has problems due to using unofficial OpenAI API usage and rate-limiting.
+1. [**Default**] Use OpenAI's official ChatGPT APIs - Use your personal/organizational API Keys. This method provides many parameters to customize your prompt. Check out the GPT3 settings. For more details: [GPT3 OpenAI API Key](#api-key-setup)
+2. Autologin - Uses browser to ask questions to ChatGPT. Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages. [Autologin Setup (Default)](#browser-setup)
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/methods.png">
 
-# Setup
+## API Key Setup
+
+Get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-keys)
+
+1. Click `Login` in your extension or ask any coding question by selecting a code fragment.
+2. Once asked provide your API Key to the extension
+   - [Optional] You could also store your API Key in your settings.json. However, it's highly discouraged due to security reasons.
+
+# Browser Setup
 
 🚀 All you need to do is click Login or ask a question to get started!
 
@@ -80,18 +85,6 @@ Credits to [@EzyDark](https://github.com/EzYDark)
 
 - [How to get it work in remote workspace (Remote - SSH) #39](https://github.com/gencay/vscode-chatgpt/issues/39#issuecomment-1370272656)
 - [How to get it work under WSL2 #25](https://github.com/gencay/vscode-chatgpt/issues/25#issuecomment-1374833026)
-
-## GPT3
-
-### Official OpenAI API - GPT3 Setup
-
-If you prefer using OpenAI's official APIs to communicate, switch your method setting to `GPT3 OpenAI API Key` and get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-keys)
-
-1. Click `Login` in your extension or ask any coding question by selecting a code fragment.
-2. Once asked provide your API Key to the extension
-   - [Optional] You could also store your API Key in your settings.json. However, it's highly discouraged due to security reasons.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/api-key.png">
 
 # Features
 
@@ -188,24 +181,6 @@ Format examples:
 - Authenticated: `myUsername:myPassword@my.proxy.com:3001`
 - Anonymous: `204.137.172.37:999`
 
-## Manual Setup
-
-ℹ️ This method is no longer recommended/maintained since hard rate-limiting by OpenAI services. Please use the `AutoLogin` option with Zero-Configuration required.
-
-1. Go to https://chat.openai.com and login.
-2. Open your browser's developer tools
-   - Hit F12 to open the developer tools in most browsers
-   - Alternatively, right click on the browser window and select `Inspect`
-3. Go to `Application` -> `Cookies` -> `https://chat.openai.com`. You will need the following cookies:
-   - `__Secure-next-auth.session-token`: The extension will use this to send prompts to ChatGPT
-   - `cf_clearance`: CloudFlare clearance token. A security measure OpenAI put in place to block automated access.
-4. Go to `Console` and type in the following code to get your `user-agent`
-   - `navigator.userAgent`: This is your browser's user-agent, needed for CloudFlare clearance. Enter the value of `userAgent` when prompted by the extension. Copy its value **without single or double quotes**.
-5. Now that you have all required session variables, run any command using the extension and you'll be asked to enter these values:
-   - `__Secure-next-auth.session-token`: An encoded token starting with `ey***`
-   - `cf_clearance`: An alpha-numeric token
-   - `userAgent`
-
 # Troubleshooting
 
 - It's possible that OpenAI systems may experience issues responding to your queries due to high-traffic from time to time.
@@ -227,4 +202,4 @@ Format examples:
 - We assume no responsibility of any issues that you may face using this extension. Your use of OpenAI services is subject to OpenAI's [Privacy Policy](https://openai.com/privacy/) and [Terms of Use](https://openai.com/terms/).
 - 💻 Open AI ChatGPT: https://chat.openai.com/
 - 🖼️ Open AI Dall-E-2: https://openai.com/dall-e-2/
-- 🧪 The manual setup option uses [unofficial nodejs OpenAI API wrapper](https://github.com/transitive-bullshit/chatgpt-api).
+- 🧪 Uses [unofficial nodejs OpenAI API wrapper](https://github.com/transitive-bullshit/chatgpt-api) for conversational fetch calls to api.openai.com.

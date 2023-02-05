@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.5.0] - 2022-02-04
+
+- The pre-release Official ChatGPT model is available via OpenAI API Key method.
+
 ## [3.4.0] - 2022-01-20
 
 - Streaming conversation is now available. You will see results as ChatGPT / Codex / GPT models are typing.
