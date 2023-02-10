@@ -22,6 +22,7 @@
 
 # ChatGPT as your copilot to level up your developer experience
 
+- ⏳ Google's LaMDA, Bard integration is upcoming once the API is available.
 - ➕ ChatGPT Plus support.
 - 🔥 Streaming conversation support for both browser and API Key method. ChatGPT will type as they think.
 - 📝 Create files/projects or fix your code with one click.
@@ -37,7 +38,7 @@
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/methods.png">
 
-## API Key Setup
+# API Key Setup
 
 Get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-keys)
 
@@ -184,6 +185,7 @@ Format examples:
 # Troubleshooting
 
 - It's possible that OpenAI systems may experience issues responding to your queries due to high-traffic from time to time.
+- If you get `404 NotFound` error, it means one of the parameters you provided is unknown (i.e. `chatgpt.gpt3.model`). Most likely switching to default `model` in your settings would fix this issue.
 - If you get `400 BadRequest` error with API Key based method, it means that your conversation's length is more than GPT/Codex models can handle. Clear your conversation history with `ChatGPT: Clear conversation` command and retry sending your prompt.
 - If you get `ChatGPT is at capacity right now` during autologin, the extension will refresh the page every 2 seconds until you see the login page. Refreshing may help in some cases, when there is a queue. This is unfortunately out of this extension's control. If, even after refresh, OpenAI shows capacity error, the browser will close automatically.
 - If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
@@ -199,6 +201,7 @@ Format examples:
 
 # Disclaimer and Credits
 
+- This public repository is only used for documentation purposes at the moment. It's due to various reasons outlined [here](https://github.com/gencay/vscode-chatgpt/issues/68). Please make sure you are comfortable with the disclaimers below before using the extension.
 - There is no guarantee that the extension will continue to work as-is without any issues or side-effects. Please use it at your own risk. It may stop working without a notice e.g. OpenAI may decide to change all or some of its functionality, which will affect this extension.
 - This extension never uses/stores your personally identifiable information. There are some optional settings that you may opt-in to use i.e. OpenAI API Key. Please be careful of what you are storing in your settings.json file, since vs-code may sync them across their instances and it's outside of this extension's boundary. We recommend not storing any personally identifiable information in your settings.json.
 - This extension collects metadata to improve its features. No personally identifiable information is collected. You can opt-out from telemetry either by setting the global 'telemetry.telemetryLevel' or 'chatgpt.telemetry.disable'. The extension will respect both of these settings and will collect metadata only if both allow telemetry. We use the official telemetry package provided by the vscode team [here](https://github.com/Microsoft/vscode-extension-telemetry) to understand this extension's usage patterns better to plan new feature releases i.e. popularity of Browser-based autologin vs. API Key method setting.
