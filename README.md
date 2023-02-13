@@ -13,19 +13,18 @@
     </a>
 </p>
 
-## 📢 New feature - Use pre-release ChatGPT model via API Key Method
+## 📢 New features - Keybindings, new custom prompts and enable/disable prompts
 
-- You can now use Pre-Release model to enable ChatGPT with API Key method
-- We made the API Key method as the default integration. Please note that the model name may change without a prior notice, which may break the ChatGPT interface. Extension will be updated once OpenAI enables the ChatGPT in production with the latest model name. If the name changes before an extension update, you could update your vs-code settings.json with another model name: `chatgpt.gpt3.model`
-
-  <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/prerelease-chatgpt-model.png">
+- You can now use/customize keybindings for your prompts. (i.e. Use `cmd+k cmd+shift+1` to run `ChatGPT: Add Tests` on the selected code on MacOS)
+- You can now enable/disable prompts that you wish to see in the editor's context menus.
+- There are 2 new prompts that you can customize and enable if the currently available prompts are insufficient for your use case.
 
 # ChatGPT as your copilot to level up your developer experience
 
 - ⏳ Google's LaMDA, Bard integration is upcoming once the API is available.
 - ➕ ChatGPT Plus support.
 - 🔥 Streaming conversation support for both browser and API Key method. ChatGPT will type as they think.
-- 📝 Create files/projects or fix your code with one click.
+- 📝 Create files/projects or fix your code with one click or with keyboard shortcuts.
 - 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs.
 - ➡️ Export all your conversation history at once in Markdown format.
 
@@ -156,6 +155,10 @@ The extension will detect if ChatGPT didn't complete code in their answer and it
 - `ChatGPT: Add comments`: Add comments for the selected code. Right click on a selected block of code, run command.
   - "default": "Add comments for the following code",
   - "description": "The prompt prefix used for adding comments for the selected code"
+- `ChatGPT: Custom prompt 1`: Your custom prompt 1. It's disabled by default, please set to a custom prompt and enable it if you prefer using customized prompt
+  - "default": "",
+- `ChatGPT: Custom prompt 2`: Your custom prompt 2. It's disabled by default, please set to a custom prompt and enable it if you prefer using customized prompt
+  - "default": "",
 
 ## Other available commands
 

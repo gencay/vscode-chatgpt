@@ -2,6 +2,13 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.6.0] - 2022-02-12
+
+- Keybindings, new custom prompts and enable/disable prompts
+- You can now use/customize keybindings for your prompts. (i.e. Use `cmd+k cmd+shift+1` to run `ChatGPT: Add Tests` on the selected code on MacOS)
+- You can now enable/disable prompts that you wish to see in the editor's context menus.
+- There are 2 new prompts that you can customize and enable if the currently available prompts are insufficient for your use case.
+
 ## [3.5.5] - 2022-02-05
 
 - ChatGPT Plus support. If you have a Plus subscription, you can now use the \*-paid models for your prompts.
