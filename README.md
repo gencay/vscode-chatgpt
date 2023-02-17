@@ -47,6 +47,8 @@ Get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-k
 
 # Browser Setup
 
+> ❕ Please do not interrupt the autologin flow and do not close the browser. Let the extension log you in and the browser will be minimized automatically.
+
 🚀 All you need to do is click Login or ask a question to get started!
 
 1. Click on the ChatGPT extension icon on your sidebar and hit `Login` button.
