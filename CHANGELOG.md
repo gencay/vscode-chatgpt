@@ -2,6 +2,16 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.7.0] - 2022-02-25
+
+#### ChatGPT Conversation History
+
+- Use `Browser Auto-login` method to access all of your ChatGPT conversations.
+- Either from the home page or the kebab menu, click `Show conversations`.
+- Select a conversation to load.
+- You can continue the conversation or move to another conversation easily.
+- A timestamp for when the chat was created along with its title will be displayed on the top of the window.
+
 ## [3.6.0] - 2022-02-12
 
 - Keybindings, new custom prompts and enable/disable prompts

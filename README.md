@@ -13,11 +13,25 @@
     </a>
 </p>
 
-## 📢 New features - Keybindings, new custom prompts and enable/disable prompts
+## 📢 New features - ChatGPT conversation history
+
+<details open>
+  <summary>Access all of your ChatGPT conversation history</summary>
+
+- You can view top 50 recent conversations
+- Continue or switch between conversations easily
+- NOTE: this is only available if you use the extension with Browser Auto-login method.
+
+</details>
+
+<details>
+  <summary>Keybindings, new custom prompts and enable/disable prompts</summary>
 
 - You can now use/customize keybindings for your prompts. (i.e. Use `cmd+k cmd+shift+1` to run `ChatGPT: Add Tests` on the selected code on MacOS)
 - You can now enable/disable prompts that you wish to see in the editor's context menus.
 - There are 2 new prompts that you can customize and enable if the currently available prompts are insufficient for your use case.
+
+</details>
 
 # ChatGPT as your copilot to level up your developer experience
 
@@ -72,6 +86,16 @@ Get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-k
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/chatgpt-autologin.gif">
 
 ---
+
+## ChatGPT Conversation History
+
+- Use `Browser Auto-login` method to access all of your ChatGPT conversations.
+- Either from the home page or the kebab menu, click `Show conversations`.
+- Select a conversation to load.
+- You can continue the conversation or move to another conversation easily.
+- A timestamp for when the chat was created along with its title will be displayed on the top of the window.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/conversation-history.gif">
 
 ## Override settings with any Chromium-based browser
 
