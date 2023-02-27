@@ -74,6 +74,7 @@ Get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-k
 # Browser Setup
 
 > ❕ Please do not interrupt the autologin flow and do not close the browser. Let the extension log you in and the browser will be minimized automatically.
+> ➕ Magic Links with ChatGPT Plus subscriptions should be opened on the same tab the extension is opening. Do not click it from your email. Just copy and paste it into the same browser extension is using.
 
 🚀 All you need to do is click Login or ask a question to get started!
 
@@ -82,6 +83,7 @@ Get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-k
 2. A new browser window (Default is `Chrome` but you may override it with any Chromium-based browser) will open up redirected to https://chat.openai.com/. Wait till you see login page, and click on Login on your browser.
 
    - If you see a `ChatGPT is at capacity right now` message, the extension will refresh the page every 2 seconds until it's passed. If OpenAI systems are experiencing issues and the extension fails to see Login page after 10 retries, the browser will be automatically closed.
+   - If you are ChatGPT Plus subscriber, you may enter your email address to receive a Magic Link. Open that link in the same tab that the extension opens for Browser auto-login. Do not click on it from your email, since clicking will deactivate it and you will need to request a new link. This is required for the extension to be able to use the browser it opened for asking questions to ChatGPT.
 
 3. Solve captchas if you are prompted and continue.
 
