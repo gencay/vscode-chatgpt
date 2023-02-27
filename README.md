@@ -13,10 +13,22 @@
     </a>
 </p>
 
-## 📢 New features - ChatGPT conversation history
+## 📢 New features - ChatGPT conversation history, Stop responding feature
 
 <details open>
-  <summary>Access all of your ChatGPT conversation history</summary>
+  <summary>✋ Stop generating feature + Disabling autoscroll</summary>
+
+- Added stop generating responses feature.
+  - You can now stop GPT to generate new tokens to save tokens if the response is too long.
+- Improved Codex support.
+- Added a new context menu item when a `code-` model is selected: `ChatGPT-Codex: Generate code`
+  - Use `ctrl+shift+a` or `cmd+shift+a` to ask GPT to generate code 👆
+- Added a new setting to disable automatic scrolling of the responses as ChatGPT responds.
+
+</details>
+
+<details open>
+  <summary>💬💬 Access all of your ChatGPT conversation history</summary>
 
 - You can view top 50 recent conversations
 - Continue or switch between conversations easily

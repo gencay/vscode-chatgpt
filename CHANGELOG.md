@@ -2,6 +2,14 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.8.0] - 2022-02-27
+
+- Added stop generating responses feature.
+  - You can now stop GPT to generate new tokens to save tokens if the response is too long.
+- Improved Codex support.
+- Added a new context menu item when `code-` model is selected: `ChatGPT-Codex: Generate code`
+- Added a new setting to disable automatic scrolling of the responses as ChatGPT responds.
+
 ## [3.7.0] - 2022-02-25
 
 #### ChatGPT Conversation History
