@@ -47,9 +47,9 @@
 
 # ChatGPT as your copilot to level up your developer experience
 
-- ⏳ Google's LaMDA, Bard integration is upcoming once the API is available.
+- 📃 Access your ChatGPT web conversation history within VS Code. Switch between past conversations, continue them, or export all conversations to markdown.
 - ➕ ChatGPT Plus support.
-- 🔥 Streaming conversation support for both browser and API Key method. ChatGPT will type as they think.
+- 🔥 Streaming conversation support for both browser and API Key method. Stop the response to save your tokens.
 - 📝 Create files/projects or fix your code with one click or with keyboard shortcuts.
 - 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs.
 - ➡️ Export all your conversation history at once in Markdown format.
