@@ -2,6 +2,18 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.9.0] - 2022-03-02
+
+### 📢 New features - Official ChatGPT API / GPT 3.5 Turbo support
+
+- You can now use the following official ChatGPT APIs from OpenAI:
+  - "OpenAI API Key - gpt-3.5-turbo"
+  - "OpenAI API Key - gpt-3.5-turbo-0301"
+- 'gpt-3.5-turbo' model is now the default model used.
+- Make sure to update your model setting in your 'settings.json' if you previously used a different model.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/gpt35-model.png">
+
 ## [3.8.0] - 2022-02-27
 
 - Added stop generating responses feature.

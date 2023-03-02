@@ -13,9 +13,22 @@
     </a>
 </p>
 
-## 📢 New features - ChatGPT conversation history, Stop responding feature
+## 📢 New features - Official ChatGPT API / GPT 3.5 Turbo support
 
 <details open>
+  <summary>🚀 Official ChatGPT API / GPT 3.5 Turbo support</summary>
+
+- You can now use the following official ChatGPT APIs from OpenAI:
+  - "OpenAI API Key - gpt-3.5-turbo"
+  - "OpenAI API Key - gpt-3.5-turbo-0301"
+- 'gpt-3.5-turbo' model is now the default model used.
+- Make sure to update your model setting in your 'settings.json' if you previously used a different model.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/gpt35-model.png">
+
+</details>
+
+<details>
   <summary>✋ Stop generating feature + Disabling autoscroll</summary>
 
 - Added stop generating responses feature.
@@ -27,7 +40,7 @@
 
 </details>
 
-<details open>
+<details>
   <summary>💬💬 Access all of your ChatGPT conversation history</summary>
 
 - You can view top 50 recent conversations
@@ -47,8 +60,8 @@
 
 # ChatGPT as your copilot to level up your developer experience
 
+- ➕ ChatGPT Turbo support with GPT3.5 models
 - 📃 Access your ChatGPT web conversation history within VS Code. Switch between past conversations, continue them, or export all conversations to markdown.
-- ➕ ChatGPT Plus support.
 - 🔥 Streaming conversation support for both browser and API Key method. Stop the response to save your tokens.
 - 📝 Create files/projects or fix your code with one click or with keyboard shortcuts.
 - 🤖 Zero-Config setup. Simply login to OpenAI as usual. Or use OpenAI's official GPT3 APIs.
@@ -228,12 +241,32 @@ Format examples:
 # Troubleshooting
 
 - It's possible that OpenAI systems may experience issues responding to your queries due to high-traffic from time to time.
+- If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
+
+  - This could be due to `insufficient_quota` on your OpenAI account. You could run the following cURL command to check if your account has enough quota (If you get a response back, that mean you have it and you can look at the other reasons for 429 below.)
+  - Make sure to replace `$OPENAI_API_KEY` with your key that you use in this extension:
+
+  ```bash
+    curl https://api.openai.com/v1/completions \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer $OPENAI_API_KEY" \
+      -d '{
+      "model": "text-davinci-003",
+      "prompt": "Can I make a request?\n\n",
+      "temperature": 0.7,
+      "max_tokens": 256,
+      "top_p": 1,
+      "frequency_penalty": 0,
+      "presence_penalty": 0
+    }'
+  ```
+
+  - This could also be due to multiple browser/requests being active on OpenAI. Make sure that none of your API Keys are being actively used at the moment.
+  - You could also try re-generating a new API Key [here](https://beta.openai.com/account/api-keys)
+
 - If you get `404 NotFound` error, it means one of the parameters you provided is unknown (i.e. `chatgpt.gpt3.model`). Most likely switching to default `model` in your settings would fix this issue.
 - If you get `400 BadRequest` error with API Key based method, it means that your conversation's length is more than GPT/Codex models can handle. Clear your conversation history with `ChatGPT: Clear conversation` command and retry sending your prompt.
 - If you get `ChatGPT is at capacity right now` during autologin, the extension will refresh the page every 2 seconds until you see the login page. Refreshing may help in some cases, when there is a queue. This is unfortunately out of this extension's control. If, even after refresh, OpenAI shows capacity error, the browser will close automatically.
-- If you get `ChatGPTAPI error 429`, it means that you are making Too Many Requests. Please wait and try again in a few moments. If it persists, restart your vs-code.
-  - This could also be due to multiple browser/requests being active on OpenAI. Make sure that none of your API Keys are being actively used at the moment.
-  - You could also try re-generating a new API Key [here](https://beta.openai.com/account/api-keys)
 - If you see `ChatGPTAPI error terminated`, your requests are being throttled. Please try again later.
 - If you encounter persistent issues with your queries
   - Try `ChatGPT: Reset session` command
