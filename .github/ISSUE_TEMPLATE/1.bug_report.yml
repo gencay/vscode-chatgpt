@@ -1,0 +1,45 @@
+name: 🐞 Bug Report
+description: Create a bug report
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for using the extension and taking the time to fill out this bug report!
+  - type: checkboxes
+    attributes:
+      label: Verify it's not a duplicate bug report
+      description: There may already be a similar issue reported. You could search by error code, message etc. on the Issues page
+      options:
+        - label: 'I searched for similar bugs reported on GitHub and nobody has reported a similar issue. <a href="https://github.com/gencay/vscode-chatgpt/issues?q=" target="_blank">Search all issuees</a>.'
+          required: true
+  - type: checkboxes
+    attributes:
+      label: Verify troubleshooting guide is missing steps to solve this issue
+      description: We may already have a guide on Readme regarding the problem you're facing
+      options:
+        - label: 'I read <a href="https://github.com/gencay/vscode-chatgpt#troubleshooting" target="_blank">Troubleshooting guide on Readme</a> and there is not a guide on how to solve my problem.'
+          required: true
+  - type: textarea
+    attributes:
+      label: Describe the Bug
+      description: A clear description of what the bug is. Please make sure to list steps to reproduce your issue. Please share your OS, VS Code details as well. You could details of your VS Code via (Help->About)
+      placeholder: |
+        - Steps to reproduce the bug
+        - ...
+        - OS and version: [i.e. macOS Ventura (version 13)]
+        - VS Code details: [i.e. 1.76.0]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Please tell us if you have customized any of the extension settings or whether you are using the defaults."
+      description: Please list whether you use `Browser Auto-login` or `OpenAI API Key` method. Which model you are using i.e. `gpt-3.5-turbo` and the parameters you may have customized in your settings. You could find all of the customized settings in your `Settings.json`
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here. Please provide screenshots or screen recordings if possible.
+    validations:
+      required: false

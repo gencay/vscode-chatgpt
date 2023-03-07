@@ -87,21 +87,22 @@
 # Get Started
 
 1. `Use OpenAI API key integration` - Use your personal/organizational API Keys. This method provides many parameters to customize your prompt. Check out the GPT3 settings. For more details how to set it up: [GPT3 OpenAI API Key](#api-key-setup). See below for the models available today:
-   |Available model|Description|Max token|Knowledge|
-   |:----|:----|:----|:----|
-   |gpt-3.5-turbo|Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of `text-davinci-003`. Will be updated with our latest model iteration.|4,096|Sep 2021|
-   |gpt-3.5-turbo-0301|Snapshot of `gpt-3.5-turbo` from March 1st 2023. Unlike `gpt-3.5-turbo`, this model will not receive updates, and will only be supported for a three month period ending on June 1st 2023.|4,096|Sep 2021|
-   |text-davinci-003|Can do any language task with better quality, longer output, and consistent instruction-following than the curie, babbage, or ada models.|4,000|Jun 2021|
-   |text-davinci-002|Similar capabilities to `text-davinci-003` but trained with supervised fine-tuning instead of reinforcement learning|4,000|Jun 2021|
-   |code-davinci-002|Optimized for code-completion tasks|4,000|Jun 2021|
-   |code-cushman-001|Almost as capable as Davinci Codex, but slightly faster. This speed advantage may make it preferable for real-time applications.|2,048||
+
+   | Available model    | Description                                                                                                                                                                                | Max token | Knowledge |
+   | :----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------- | :-------- |
+   | gpt-3.5-turbo      | Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of `text-davinci-003`. Will be updated with our latest model iteration.                                               | 4,096     | Sep 2021  |
+   | gpt-3.5-turbo-0301 | Snapshot of `gpt-3.5-turbo` from March 1st 2023. Unlike `gpt-3.5-turbo`, this model will not receive updates, and will only be supported for a three month period ending on June 1st 2023. | 4,096     | Sep 2021  |
+   | text-davinci-003   | Can do any language task with better quality, longer output, and consistent instruction-following than the curie, babbage, or ada models.                                                  | 4,000     | Jun 2021  |
+   | text-davinci-002   | Similar capabilities to `text-davinci-003` but trained with supervised fine-tuning instead of reinforcement learning                                                                       | 4,000     | Jun 2021  |
+   | code-davinci-002   | Optimized for code-completion tasks                                                                                                                                                        | 4,000     | Jun 2021  |
+   | code-cushman-001   | Almost as capable as Davinci Codex, but slightly faster. This speed advantage may make it preferable for real-time applications.                                                           | 2,048     |           |
 
 2. `Use browser integration` - Uses browser to ask questions to ChatGPT. Zero-Config Autologin lets the extension grab the required tokens automatically using `puppeteer`. The extension will use the browser behind the scenes, so you are not expected to receive 4xx errors while asking ChatGPT via extension unless there is OpenAI outages. [Autologin Setup (Default)](#browser-setup)
 
    | Available model              | Description                                                                                                                      |
    | :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-   | text-davinci-002-render-paid | The default ChatGPT web model.                                                                                                   |
-   | text-davinci-002-render-sha  | The Turbo ChatGPT web model. You need an OpenAI Plus subscription for this. [Learn more](https://openai.com/blog/chatgpt-plus) . |
+   | text-davinci-002-render-sha  | The default ChatGPT web model.                                                                                                   |
+   | text-davinci-002-render-paid | The Turbo ChatGPT web model. You need an OpenAI Plus subscription for this. [Learn more](https://openai.com/blog/chatgpt-plus) . |
 
 ## API Key Setup
 
@@ -145,7 +146,7 @@ Get your API Key ready from here: [OpenAI](https://beta.openai.com/account/api-k
 
 The extension comes with context menu commands, copy/move suggested code into editor with one-click, conversation window and customization options for OpenAI's ChatGPT prompts.
 
-## ChatGPT Conversation History
+### ChatGPT Conversation History
 
 - Use `Browser Auto-login` method to access all of your ChatGPT conversations.
 - Either from the home page or the kebab menu, click `Show conversations`.
@@ -155,25 +156,47 @@ The extension comes with context menu commands, copy/move suggested code into ed
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/conversation-history.gif">
 
-## ChatGPT conversation window in vs-code
+### 📤 Export all your conversation history with one click
 
-## 📤 Export all your conversation history with one click
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/export-convo.png">
 
-## Ad-hoc prompt prefixes for you to customize what you are asking ChatGPT
+---
+
+### Ad-hoc prompt prefixes for you to customize what you are asking ChatGPT
 
 Customize what you are asking with the selected code. The extension will remember your prompt for subsequent questions.
 
-## Automatic partial code response detection
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/adhoc.png">
+
+---
+
+### Automatic partial code response detection
 
 The extension will detect if ChatGPT didn't complete code in their answer and it will suggest automatic continuation and combination of answers
 
-## 🍻 Optimized for dialogue
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/continue-combine.png">
 
-## Edit and resend a previous prompt
+---
 
-## Copy or insert the code ChatGPT is suggesting right into your editor.
+### 🍻 Optimized for dialogue
 
-# Custom prompts
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/conversation-mode-2.png">
+
+---
+
+### Edit and resend a previous prompt
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/edit-resend.png">
+
+---
+
+### Copy or insert the code ChatGPT is suggesting right into your editor.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/code-actions.png">
+
+---
+
+## Custom prompts
 
 - You can enable/disable all of your context menu items. Simply go to settings and find the prompt that you would like to disable. Custom prompts are hidden by default.
 - `ChatGPT: Ad-hoc prompt`: Ad-hoc custom prompt prefix for the selected code. Right click on a selected block of code, run command.
