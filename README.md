@@ -20,7 +20,7 @@
 >
 > #### ❄️ Featured by [Snowflake](https://www.linkedin.com/embed/feed/update/urn:li:share:7032091318650605568) on Medium blogpost
 >
-> #### 🎌 Blogpost [VSCode に ChatGPT の拡張機能を入れてコードレビューやバグを発見してもらう](VSCodeにChatGPTの拡張機能を入れてコードレビューやバグを発見してもらう)
+> #### 🎌 Blogpost [VSCode に ChatGPT の拡張機能を入れてコードレビューやバグを発見してもらう](https://qiita.com/tak001/items/c3000b3ce9b6e72b2ae5)
 >
 > #### 💙 Reviews on [Twitter](https://twitter.com/jarrodWattsDev/status/1623092184906928132)
 >
