@@ -39,7 +39,17 @@
 
 <img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/chatgpt-gif.gif">
 
-# 📢 Announcements - Official ChatGPT API / GPT 3.5 Turbo support
+## 📢 Announcements - ChatGPT Plus GPT-4 is now available via Browser autologin
+
+<details open>
+  <summary>🍀 ChatGPT Plus GPT-4 is now available via Browser autologin</summary>
+
+- You can now use the GPT-4 via your ChatGPT Plus subscription on web using Browser autologin method
+  > GPT-4 is only available on browser.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/gpt4-model.png">
+
+</details>
 
 <details open>
   <summary>🚀 Official ChatGPT API / GPT 3.5 Turbo support</summary>
@@ -49,8 +59,6 @@
   - "OpenAI API Key - gpt-3.5-turbo-0301"
 - 'gpt-3.5-turbo' model is now the default model used.
 - Make sure to update your model setting in your 'settings.json' if you previously used a different model.
-
-<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/gpt35-model.png">
 
 </details>
 

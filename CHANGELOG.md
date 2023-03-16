@@ -2,9 +2,18 @@
 
 All notable changes to the "vscode-chatgpt" extension will be documented in this file.
 
+## [3.9.6] - 2022-03-15
+
+### 📢 ChatGPT Plus GPT-4 is now available via Browser autologin
+
+- You can now use the GPT-4 via your ChatGPT Plus subscription on web using Browser autologin method
+  > GPT-4 is only available on browser.
+
+<img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/gpt4-model.png">
+
 ## [3.9.0] - 2022-03-02
 
-### 📢 New features - Official ChatGPT API / GPT 3.5 Turbo support
+### New features - Official ChatGPT API / GPT 3.5 Turbo support
 
 - You can now use the following official ChatGPT APIs from OpenAI:
   - "OpenAI API Key - gpt-3.5-turbo"
