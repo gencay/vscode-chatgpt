@@ -119,7 +119,7 @@ var ChatGPTAPI = class {
    * @param messageStore - Optional [Keyv](https://github.com/jaredwray/keyv) store to persist chat messages to. If not provided, messages will be lost when the process exits.
    * @param getMessageById - Optional function to retrieve a message by its ID. If not provided, the default implementation will be used (using an in-memory `messageStore`).
    * @param upsertMessage - Optional function to insert or update a message. If not provided, the default implementation will be used (using an in-memory `messageStore`).
-   * @param organization - Optional organization string for openai calls
+   * @param organization - Optional organization string for openai calls.
    * @param fetch - Optional override for the `fetch` implementation to use. Defaults to the global `fetch` function.
    */
   constructor(opts) {
