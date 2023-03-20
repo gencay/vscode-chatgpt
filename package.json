@@ -2,7 +2,7 @@
   "name": "vscode-chatgpt",
   "publisher": "YOUR_PUBLISHER_NAME",
   "displayName": "vscode-chatgpt",
-  "icon": "images/ai-logo.jpg",
+  "icon": "images/ai-logo.png",
   "description": "vscode-chatgpt",
   "version": "3.9.7-0",
   "aiKey": "",
@@ -228,7 +228,7 @@
         {
           "id": "vscode-chatgpt-view-container",
           "title": "ChatGPT",
-          "icon": "images/openai-logo.svg"
+          "icon": "images/ai-logo-in.png"
         }
       ]
     },
