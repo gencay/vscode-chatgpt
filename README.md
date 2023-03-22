@@ -29,6 +29,12 @@ The extension is stripped out of Browser capabilities and published as an integr
 - Edit and resend a previous prompt
 - Copy, insert or create new file from the code, ChatGPT is suggesting right into your editor.
 
+## License
+
+> If you are developing completely another extension and release it to the public, make sure you follow this.
+
+This project is released under ISC License - See root License for details. Copyright notice and the respective permission notices must appear in all copies.
+
 ## How to build and run
 
 - Clone the repository to your local machine
