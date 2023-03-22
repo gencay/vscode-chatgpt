@@ -502,6 +502,7 @@
     "vscode:prepublish": "rimraf out && npm run esbuild-base -- --minify",
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
     "build": "npm run -S esbuild-base -- --sourcemap",
+    "package": "npx vsce package",
     "watch": "npm run -S esbuild-base -- --sourcemap --watch",
     "fmt": "prettier --write \"src/**/*.ts\"&& npm run test -- --fix",
     "test": "eslint src --ext ts && tsc --noEmit"
@@ -522,7 +523,8 @@
     "glob": "^8.0.3",
     "mocha": "^10.1.0",
     "ts-loader": "^9.4.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "vsce": "^2.15.0"
   },
   "dependencies": {
     "delay": "^5.0.0",

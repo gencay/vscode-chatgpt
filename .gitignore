@@ -2,5 +2,5 @@ out
 dist
 node_modules
 .vscode-test/
-*.vsix
+# *.vsix
 !node_modules/chatgpt/build/index.js
