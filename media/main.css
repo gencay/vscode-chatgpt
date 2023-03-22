@@ -1,3 +1,16 @@
+/**
+ * @author Ali Gençay
+ * https://github.com/gencay/vscode-chatgpt
+ *
+ * @license
+ * Copyright (c) 2022 - Present, Ali Gençay
+ *
+ * All rights reserved. Code licensed under the ISC license
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ */
+
 :root {
     --container-padding: 0;
     --input-padding-vertical: 6px;

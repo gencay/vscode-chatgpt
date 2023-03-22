@@ -1,3 +1,16 @@
+/**
+ * @author Ali Gençay
+ * https://github.com/gencay/vscode-chatgpt
+ *
+ * @license
+ * Copyright (c) 2022 - Present, Ali Gençay
+ *
+ * All rights reserved. Code licensed under the ISC license
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ */
+
 import delay from 'delay';
 import fetch from 'isomorphic-fetch';
 import * as fs from 'node:fs';
@@ -5,7 +18,9 @@ import * as os from 'node:os';
 import * as vscode from 'vscode';
 import { ChatGPTAPI as ChatGPTAPI3 } from '../chatgpt-4.7.2/index';
 import { ChatGPTAPI as ChatGPTAPI35 } from '../chatgpt-5.1.1/index';
-import { AuthType, LoginMethod } from "./types";
+
+type LoginMethod = "GPT3 OpenAI API Key";
+type AuthType = "";
 
 export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	private webView?: vscode.WebviewView;
@@ -297,10 +312,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 	}
 
 	private get systemContext() {
-		return `You are ChatGPT helping the User with coding. 
-			You are intelligent, helpful and an expert developer, who always gives the correct answer and only does what instructed. You always answer truthfully and don't make things up. 
-			(When responding to the following prompt, please make sure to properly style your response using Github Flavored Markdown. 
-			Use markdown syntax for things like headings, lists, colored text, code blocks, highlights etc. Make sure not to mention markdown or styling in your actual response.)`;
+		return `You are ChatGPT helping the User with pair programming.`;
 	}
 
 	private processQuestion(question: string, code?: string, language?: string) {
