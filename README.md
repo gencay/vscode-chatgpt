@@ -1,3 +1,17 @@
+<h3 align="center"><img src="https://raw.githubusercontent.com/gencay/vscode-chatgpt/main/images/ai-logo.png" height="64"><br>An Unofficial VS Code - Chat GPT extension</h3>
+
+<p align="center">
+    <a href="https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt" alt="Marketplace version">
+        <img src="https://img.shields.io/visual-studio-marketplace/v/gencay.vscode-chatgpt?color=orange&label=VS%20Code" />
+    </a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=gencay.vscode-chatgpt" alt="Marketplace download count">
+        <img src="https://img.shields.io/visual-studio-marketplace/d/gencay.vscode-chatgpt?color=blueviolet&label=Downloads" />
+    </a>
+    <a href="https://github.com/gencay/vscode-chatgpt" alt="Github star count">
+        <img src="https://img.shields.io/github/stars/gencay/vscode-chatgpt?color=blue&label=Github%20Stars" />
+    </a>
+</p>
+
 ## The most loved\* ChatGPT extension in VS Code open-sourced
 
 > The project is built as a hobby project - With **no affiliation** to any organization
