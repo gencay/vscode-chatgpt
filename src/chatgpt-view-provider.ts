@@ -362,17 +362,19 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 						abortSignal: this.abortController.signal,
 						onProgress: (partialResponse) => {
 							this.response = partialResponse.text;
-							this.sendMessage({ type: 'addResponse', value: this.response, id: this.currentMessageId, autoScroll: this.autoScroll, responseInMarkdown });
+							this.sendMessage({ type: 'addResponse', value: this.response, id: this.conversationId, autoScroll: this.autoScroll, responseInMarkdown });
 						},
 					});
 					({ text: this.response, id: this.conversationId, parentMessageId: this.messageId } = gpt3Response);
 				} else if (!this.isGpt35Model && this.apiGpt3) {
 					({ text: this.response, conversationId: this.conversationId, parentMessageId: this.messageId } = await this.apiGpt3.sendMessage(question, {
 						promptPrefix: this.systemContext,
+						messageId: this.conversationId,
+						parentMessageId: this.messageId,
 						abortSignal: this.abortController.signal,
 						onProgress: (partialResponse) => {
 							this.response = partialResponse.text;
-							this.sendMessage({ type: 'addResponse', value: this.response, id: this.currentMessageId, autoScroll: this.autoScroll, responseInMarkdown });
+							this.sendMessage({ type: 'addResponse', value: this.response, id: this.messageId, autoScroll: this.autoScroll, responseInMarkdown });
 						},
 					}));
 				}
@@ -382,7 +384,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 				this.response = options.previousAnswer + this.response;
 			}
 
-			const hasContinuation = ((this.response.split("```").length) % 2) === 0;
+			const hasContinuation = ((this.response.split("```").length) % 2) === 1;
 
 			if (hasContinuation) {
 				this.response = this.response + " \r\n ```\r\n";
