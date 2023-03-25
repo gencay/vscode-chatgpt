@@ -83,7 +83,7 @@
                 document.getElementById("conversation-list").classList.add("hidden");
 
                 const escapeHtml = (unsafe) => {
-                    return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+                    return unsafe.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&#039;', "'");
                 };
 
                 list.innerHTML +=
@@ -104,11 +104,11 @@
                 }
                 break;
             case "addResponse":
-                let existingMessage = message.id && document.getElementById(message.id);
+                let existingMessage = message.rawId && document.getElementById(message.id);
                 let updatedValue = "";
 
                 const unEscapeHtml = (unsafe) => {
-                    return unsafe.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&#039;', "'");
+                    return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
                 };
 
                 if (!message.responseInMarkdown) {
@@ -161,9 +161,9 @@
                         buttonWrapper.append(copyButton, insert, newTab);
 
                         if (preCode.parentNode.previousSibling) {
-                            preCode.parentNode.parentNode.insertBefore(buttonWrapper, preCode.parentNode.previousSibling);
+                            preCode.parentNode.parentElement.insertAfter(buttonWrapper, preCode.parentElement.previousSibling);
                         } else {
-                            preCode.parentNode.parentNode.prepend(buttonWrapper);
+                            preCode.parentNode.parentElement.append(buttonWrapper);
                         }
                     });
 
@@ -177,10 +177,6 @@
 
                 break;
             case "addError":
-                if (!list.innerHTML) {
-                    return;
-                }
-
                 const messageValue = message.value || "An error occurred. If this issue persists please clear your session token with `ChatGPT: Reset session` command and/or restart your Visual Studio Code. If you still experience issues, it may be due to outage on https://openai.com services.";
 
                 list.innerHTML +=
