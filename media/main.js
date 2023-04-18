@@ -122,7 +122,7 @@
                 if (existingMessage) {
                     existingMessage.innerHTML = markedResponse;
                 } else {
-                    list.innerHTML +=
+                    list.innerHTML =
                         `<div data-license="isc-gnc" class="p-4 self-end mt-4 pb-8 answer-element-ext">
                         <h2 class="mb-5 flex">${aiSvg}ChatGPT</h2>
                         <div class="result-streaming" id="${message.id}">${markedResponse}</div>
